@@ -13,6 +13,7 @@ const mainStyles = {
 const IndexPage = () => {
   return (
     <main style={mainStyles}>
+      <Nav />
       <Hero />
     </main>
   )
