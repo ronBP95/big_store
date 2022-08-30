@@ -1,16 +1,19 @@
 import React from 'react';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const navStyles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: "15px" 
+    paddingTop: "15px" ,
+    background: "red",
 }
 
 const navLeft = {
     display: "flex",
     listStyleType: "none",
     paddingLeft: "15px",
+    background: "blue",
 }
 
 const logo = {
@@ -21,6 +24,7 @@ const navRight = {
     display: "flex",
     paddingRight: "15px",
     listStyleType: "none",
+    background: "blue",
 }
 
 const Nav = () => {
@@ -36,7 +40,7 @@ const Nav = () => {
             </div>
             <ul style={navRight}>
                 <li>Login</li>
-                <li>Cart</li>
+                <li><AiOutlineShoppingCart /></li>
             </ul>
         </div>
     );
