@@ -3,11 +3,14 @@ import { Nav, Hero } from '../components/index'
 import './index.css'
 
 const mainStyles = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
   margin: "0",
   padding: "0",
   height: "100vh",
   width: "100vw",
-  background: "green"
+  background: "rgb(58,180,107)",
 }
 
 const IndexPage = () => {
