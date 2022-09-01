@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const nav = {
     display: "flex",
     justifyContent: "center",
-    width: "100vw",
+    width: "95vw",
     // borderBottom: "1px solid black",
     // background: "blue",
     fontFamily: "Open Sans",
@@ -55,6 +55,8 @@ const navIcon = {
 const navLogo = {
     marginLeft: "25px",
     cursor: "pointer",
+    textDecoration: "none",
+    color: "black",
 }
 
 const navAbout = {
@@ -74,7 +76,7 @@ const Nav = () => {
                 <p style={navLeft}> Menu </p>
                 <ul style={navMiddle}>
                     <p style={hidden}>backItem</p>
-                    <p style={navLogo}>BIG STORE</p>
+                    <a style={navLogo} href="/">BIG STORE</a>
                     <p style={navAbout}>Who We Are</p>
                 </ul>
                 <li style={navIcon}><AiOutlineShoppingCart /></li>

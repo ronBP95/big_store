@@ -57,12 +57,12 @@ const heroButton = {
     padding: "15px",
     paddingLeft: "50px",
     paddingRight: "50px",
-    marginTop: "20px",
     borderRadius: "20px",
     transition: "0.2s",
     background: "#0a192f",
     color: "white",
     cursor: "pointer",
+    textDecoration: "none",
 }
 
 const hoverButton = {
@@ -70,12 +70,12 @@ const hoverButton = {
     padding: "15px",
     paddingLeft: "50px",
     paddingRight: "50px",
-    marginTop: "20px",
     borderRadius: "20px",
     transition: "0.2s",
     background: "white",
     color: "#0a192f",
     cursor: "pointer",
+    textDecoration: "none",
 }
 
 const promoBanner = {
@@ -97,6 +97,10 @@ const promoHover = {
     cursor: "pointer",
 }
 
+const anchorList = {
+    marginTop: "30px"
+}
+
 const Hero = () => {
     const [mouseOver, setMouseOver] = useState(false)
     const [promoOver, setPromoOver] = useState(false)
@@ -108,13 +112,14 @@ const Hero = () => {
             <ul style={heroText}>
                 <li>The future of buying</li>
                 <li><span>-</span> is now</li>
-                <li>
-                    <p style={mouseOver ? hoverButton : heroButton}
+                <li style={anchorList}>
+                    <a style={mouseOver ? hoverButton : heroButton}
                     onMouseEnter={() => setMouseOver(!mouseOver)}
                     onMouseLeave={() => setMouseOver(!mouseOver)}
+                    href="/shop"
                     >
                     Shop Now
-                    </p>
+                    </a>
                 </li>
             </ul>
             <div style={promoBanner}>

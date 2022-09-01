@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Nav, Hero } from '../components/index'
+import { Nav, Hero, Footer } from '../components/index'
 import './index.css'
 
 const mainStyles = {
@@ -8,8 +8,9 @@ const mainStyles = {
   alignItems: "center",
   margin: "0",
   padding: "0",
-  height: "100vh",
-  width: "100vw",
+  width: "100%",
+  maxWidth: "100%",
+  // background: "green",
 }
 
 
@@ -18,6 +19,7 @@ const IndexPage = () => {
     <main style={mainStyles}>
       <Nav />
       <Hero />
+      <Footer />
     </main>
   )
 }
