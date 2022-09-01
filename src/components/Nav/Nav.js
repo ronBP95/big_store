@@ -5,7 +5,7 @@ const nav = {
     display: "flex",
     justifyContent: "center",
     width: "100vw",
-    borderBottom: "1px solid black",
+    // borderBottom: "1px solid black",
     // background: "blue",
     fontFamily: "Open Sans",
 }

@@ -6,7 +6,7 @@ const heroPage = {
     gridTemplateColumns: "repeat(1, 1fr)",
     justifyContent: "center",
     alignItems: "center",
-    height: "73.5%",
+    height: "85%",
     width: "95vw",
     background: "green",
 }
@@ -78,10 +78,28 @@ const hoverButton = {
     cursor: "pointer",
 }
 
+const promoBanner = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "15px",
+    background: "#F9E099",
+    fontFamily: "Open Sans",
+    color: "#0a192f",
+}
+
+const promoText = {
+    cursor: "pointer",
+}
+
+const promoHover = {
+    opacity: "0.75",
+    cursor: "pointer",
+}
+
 const Hero = () => {
-
     const [mouseOver, setMouseOver] = useState(false)
-
+    const [promoOver, setPromoOver] = useState(false)
     return (
         <div style={heroPage}>
             <div style={heroBanner} >
@@ -99,6 +117,14 @@ const Hero = () => {
                     </p>
                 </li>
             </ul>
+            <div style={promoBanner}>
+                <p style={promoOver ? promoHover : promoText}
+                onMouseEnter={() => setPromoOver(!promoOver)}
+                onMouseLeave={() => setPromoOver(!promoOver)}
+                >
+                Get $15 off of your first order when you check out ➜
+                </p>
+            </div>
         </div>
     );
 }
