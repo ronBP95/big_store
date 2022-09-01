@@ -5,7 +5,8 @@ const nav = {
     display: "flex",
     justifyContent: "center",
     width: "100vw",
-    borderBottom: "1px solid black"
+    borderBottom: "1px solid black",
+    // background: "blue",
 }
 
 const navStyles = {
@@ -26,6 +27,7 @@ const navLeft = {
     listStyleType: "none",
     minWidth: "42px",
     minHeight: "48px",
+    cursor: "pointer",
     // background: "blue",
 }
 
@@ -46,14 +48,17 @@ const navIcon = {
     fontSize: "16pt",
     // background: "blue",
     height: "100%",
+    cursor: "pointer",
 }
 
 const navLogo = {
-    marginLeft: "25px"
+    marginLeft: "25px",
+    cursor: "pointer",
 }
 
 const navAbout = {
-    paddingRight: "25px"
+    paddingRight: "25px",
+    cursor: "pointer",
 }
 
 const hidden = {

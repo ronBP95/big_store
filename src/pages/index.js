@@ -10,8 +10,8 @@ const mainStyles = {
   padding: "0",
   height: "100vh",
   width: "100vw",
-  background: "rgb(58,180,107)",
 }
+
 
 const IndexPage = () => {
   return (
