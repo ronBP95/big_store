@@ -7,6 +7,7 @@ const nav = {
     width: "100vw",
     borderBottom: "1px solid black",
     // background: "blue",
+    fontFamily: "Open Sans",
 }
 
 const navStyles = {
