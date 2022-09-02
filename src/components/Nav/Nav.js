@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const nav = {
     display: "flex",
     justifyContent: "center",
-    width: "95vw",
+    width: "100%",
     // borderBottom: "1px solid black",
     // background: "blue",
     fontFamily: "Open Sans",
@@ -13,7 +13,7 @@ const nav = {
 const navStyles = {
     display: "flex",
     flexDirection: "row",
-    width: "65%",
+    width: "75%",
     justifyContent: "space-between",
     alignItems: "center",
     paddingTop: "15px" ,

@@ -13,6 +13,9 @@ const mainStyles = {
   // background: "green",
 }
 
+const credit = {
+  paddingBottom: "25px"
+}
 
 const IndexPage = () => {
   return (
@@ -20,6 +23,7 @@ const IndexPage = () => {
       <Nav />
       <Hero />
       <Footer />
+      <div style={credit}>Made by Ron Magpantay 2022</div>
     </main>
   )
 }
