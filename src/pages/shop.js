@@ -44,26 +44,36 @@ const navItems = {
 }
 
 const shopContent = {
+    display: "flex",
+    flexDirection: "column",
     background: "green",
     width: "75vw",
-    marginTop: "50px",
+    height: "auto",
 }
 
 const quote = {
-    background: "green",
+    // background: "green",
     width: "100%",
 }
 
 const shopCardMenu = {
     display: "grid",
-    gridTemplateColumns: "repeat(4, 2fr)",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    height: "100%",
+    width: "100%",
+    // background: "green",
+    columnGap: "30px",
+    rowGap: "30px",
+    marginTop: "50px",
 }
 
 const shopCard = {
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     background: "red",
-    height: "100%",
+    height: "500px",
+    width: "100%",
 }
 
 const Shop = () => {
@@ -89,10 +99,38 @@ const Shop = () => {
                     "The Personality of the hat and the wearer makes the hat."
                 </div>
                 <div style={shopCardMenu}>
-                        <div style={shopCard}>Item 1</div>
-                        <div style={shopCard}>Item 2</div>
-                        <div style={shopCard}>Item 3</div>
-                        <div style={shopCard}>Item 4</div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
+                        <div style={shopCard}>
+                            <p>Image</p>
+                            <p>Description</p>
+                        </div>
                 </div>
             </div>
             <Footer />
