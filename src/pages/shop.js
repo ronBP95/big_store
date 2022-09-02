@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Nav, Footer } from '../components/index' 
 
+// image imports:
+import Cowboy from "https://media.istockphoto.com/photos/rodeo-horse-rider-wild-west-culture-americana-and-american-country-picture-id1184522745?k=20&m=1184522745&s=612x612&w=0&h=XdqC0eWlEQuz-QtgmqIfi4OdDhfhLQqnyvDd6JwLkZE="
+
 const shopStyles = {
     display: "flex",
     flexDirection: "column",
@@ -69,11 +72,25 @@ const shopCardMenu = {
 
 const shopCard = {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     background: "red",
     height: "500px",
     width: "100%",
+}
+
+const shopImage = {
+    width: "100%",
+    height: "50%",
+    background: "blue",
+}
+
+const shopDesc = {
+    width: "100%",
+    height: "50%",
+    background: "pink",
+    paddingTop: "10%",
 }
 
 const Shop = () => {
@@ -100,8 +117,13 @@ const Shop = () => {
                 </div>
                 <div style={shopCardMenu}>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                            <img style={shopImage} src={Cowboy}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
                             <p>Image</p>

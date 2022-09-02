@@ -8,7 +8,7 @@ const heroPage = {
     alignItems: "center",
     height: "85%",
     width: "95vw",
-    background: "green",
+    // background: "green",
 }
 
 const heroBanner = {
