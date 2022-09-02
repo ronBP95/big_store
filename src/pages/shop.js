@@ -43,6 +43,29 @@ const navItems = {
     cursor: "pointer",
 }
 
+const shopContent = {
+    background: "green",
+    width: "75vw",
+    marginTop: "50px",
+}
+
+const quote = {
+    background: "green",
+    width: "100%",
+}
+
+const shopCardMenu = {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 2fr)",
+}
+
+const shopCard = {
+    display: "flex",
+    justifyContent: "center",
+    background: "red",
+    height: "100%",
+}
+
 const Shop = () => {
     const [header, setHeader] = useState("All")
     return (
@@ -61,8 +84,16 @@ const Shop = () => {
                     <p>Filter By ⬇</p>
                 </div>
             </div>
-            <div>
-                Shop Content will go here
+            <div style={shopContent}>
+                <div style={quote}>
+                    "The Personality of the hat and the wearer makes the hat."
+                </div>
+                <div style={shopCardMenu}>
+                        <div style={shopCard}>Item 1</div>
+                        <div style={shopCard}>Item 2</div>
+                        <div style={shopCard}>Item 3</div>
+                        <div style={shopCard}>Item 4</div>
+                </div>
             </div>
             <Footer />
         </div>
