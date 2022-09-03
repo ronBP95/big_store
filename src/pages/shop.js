@@ -117,7 +117,7 @@ const Shop = () => {
                 </div>
                 <div style={shopCardMenu}>
                         <div style={shopCard}>
-                            <img style={shopImage} src={Cowboy}></img>
+                            <img style={shopImage}></img>
                             <div style={shopDesc}>
                                 <h2>Hat Health</h2>
                                 <h1>Hat+</h1>
@@ -126,32 +126,67 @@ const Shop = () => {
                             </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                         <div style={shopCard}>
-                            <p>Image</p>
-                            <p>Description</p>
+                        <img style={shopImage}></img>
+                            <div style={shopDesc}>
+                                <h2>Hat Health</h2>
+                                <h1>Hat+</h1>
+                                <p>A multi-threaded hat of the best quality.</p>
+                                <p> $475 </p>
+                            </div>
                         </div>
                 </div>
             </div>
