@@ -4,6 +4,7 @@
   "private": true,
   "description": "big-store",
   "author": "Ron Magpantay",
+  "proxy": "http://localhost:4000",
   "keywords": [
     "gatsby"
   ],
