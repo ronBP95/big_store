@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const nav = {
@@ -77,9 +78,9 @@ const Nav = () => {
                 <ul style={navMiddle}>
                     <p style={hidden}>backItem</p>
                     <a style={navLogo} href="/">BIG STORE</a>
-                    <p style={navAbout}>Who We Are</p>
+                    <Link to="/register" style={navAbout}>Register</Link>
                 </ul>
-                <li style={navIcon}><AiOutlineShoppingCart /></li>
+                <Link to='/cart' style={navIcon}><AiOutlineShoppingCart /></Link>
             </div>
         </div>
 

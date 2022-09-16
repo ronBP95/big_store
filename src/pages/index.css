@@ -17,3 +17,79 @@
     font-family: "Open Sans";
     src: url(../fonts/OpenSans-Regular.ttf);
 }
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    padding-top: 20px;
+    /* background-color: red; */
+}
+
+.form {
+    width: 70%;
+    margin: 0 auto;
+    /* background-color: green; */
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.form-group label {
+    text-align: left;
+    display: block;
+    margin: 0 0 5px 3px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #0a192f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    appearance: button;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn svg {
+    margin-right: 8px;  
+}
+
+.btn-reverse {
+    background: #fff;
+    color: #000;
+}
+
+.btn-block {
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}

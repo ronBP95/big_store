@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Nav, Footer } from '../components/index' 
 
 // image imports:
-import Cowboy from "https://media.istockphoto.com/photos/rodeo-horse-rider-wild-west-culture-americana-and-american-country-picture-id1184522745?k=20&m=1184522745&s=612x612&w=0&h=XdqC0eWlEQuz-QtgmqIfi4OdDhfhLQqnyvDd6JwLkZE="
 
 const shopStyles = {
     display: "flex",

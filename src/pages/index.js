@@ -30,4 +30,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Big Store</title>
+export const Head = () => <title>Big Store | Home</title>
