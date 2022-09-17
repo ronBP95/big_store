@@ -44,7 +44,6 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Invalid User Data')
     }
-    res.json({message: "User was registered"})
 })
 
 // @desc    Authenticate a user
@@ -68,8 +67,6 @@ const loginUser = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Invalid credentials')
     }
-
-    res.json({message: 'Login User'})
 })
 
 // @desc    Register new user
@@ -86,9 +83,14 @@ const getMe = asyncHandler(async (req, res) => {
     })
 })
 
+const allUsers = asyncHandler(async (req, res) => {
+    const all = await User.find()
+    res.status(200).json(all)
+})
+
 // Generate JWT
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+    return jwt.sign({ id }, `${process.env.JWT_SECRET}`, {
         expiresIn: '30d',
     })
 }
@@ -97,4 +99,5 @@ module.exports = {
     registerUser,
     loginUser,
     getMe,
+    allUsers,
 }
