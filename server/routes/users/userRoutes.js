@@ -1,8 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, getMe } = require('../../controllers/userController.js')
+const { registerUser, loginUser, getMe, allUsers } = require('../../controllers/userController.js')
 
-router.get('/', registerUser)
+
+// For debugging
+router.get('/', allUsers)
+// For debugging
+
+router.post('/', registerUser)
 router.post('/', loginUser)
 router.get('/me', getMe)
 

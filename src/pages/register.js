@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUser } from 'react-icons/fa'
+import axios from 'axios';
+import { Redirect } from '@reach/router'
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -16,8 +18,20 @@ const Register = () => {
         }))
     }
 
-    const onSubmit = (e) => {
-        e.preventDefault()
+    const onSubmit = async (e) => {
+        await axios({
+            method: "post",
+            url:"http://localhost:4000/api/users",
+            data: formData,
+        })
+            .then(function (res) {
+                // err
+                console.log(res)
+            })
+            .catch(function (res) {
+                // error
+                console.log(res)
+            })
     }
 
     const { name, email, password, password2 } = formData
