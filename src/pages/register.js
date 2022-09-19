@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FaUser } from 'react-icons/fa'
 import axios from 'axios';
 import { Redirect } from '@reach/router'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -19,6 +21,7 @@ const Register = () => {
     }
 
     const onSubmit = async (e) => {
+        e.preventDefault()
         await axios({
             method: "post",
             url:"http://localhost:4000/api/users",
@@ -27,10 +30,12 @@ const Register = () => {
             .then(function (res) {
                 // err
                 console.log(res)
+                toast("User was successfully created!")
             })
             .catch(function (res) {
                 // error
                 console.log(res)
+                toast("Invalid fields or User already exists")
             })
     }
 
@@ -96,6 +101,7 @@ const Register = () => {
                     </button>
                 </form>
             </section>
+            <ToastContainer />
         </div>
     );
 }
