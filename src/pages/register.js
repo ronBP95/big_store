@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Redirect } from '@reach/router'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { navigate } from 'gatsby';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const Register = () => {
             .then(function (res) {
                 // err
                 console.log(res)
-                toast("User was successfully created!")
+                navigate("/")
             })
             .catch(function (res) {
                 // error
