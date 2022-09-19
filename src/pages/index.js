@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Nav, Hero, Footer } from '../components/index'
 import './index.css'
+import { ToastContainer } from "react-toastify"
 
 const mainStyles = {
   display: "flex",
@@ -24,6 +25,7 @@ const IndexPage = () => {
       <Hero />
       <Footer />
       <div style={credit}>Made by Ron Magpantay 2022</div>
+      <ToastContainer />
     </main>
   )
 }

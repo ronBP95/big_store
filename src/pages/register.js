@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaUser } from 'react-icons/fa'
 import axios from 'axios';
 import { Redirect } from '@reach/router'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { navigate } from 'gatsby';
 
@@ -32,6 +32,7 @@ const Register = () => {
                 // err
                 console.log(res)
                 navigate("/")
+                toast("User created successfully")
             })
             .catch(function (res) {
                 // error
@@ -102,7 +103,6 @@ const Register = () => {
                     </button>
                 </form>
             </section>
-            <ToastContainer />
         </div>
     );
 }
