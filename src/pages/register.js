@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa'
 import axios from 'axios';
-import { Redirect } from '@reach/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { navigate } from 'gatsby';
@@ -25,7 +24,7 @@ const Register = () => {
         e.preventDefault()
         await axios({
             method: "post",
-            url:"http://localhost:4000/api/users",
+            url: "http://localhost:4000/api/users",
             data: formData,
         })
             .then(function (res) {
@@ -55,47 +54,47 @@ const Register = () => {
             <section class='form'>
                 <form onSubmit={onSubmit}>
                     <div class='form-group'>
-                        <input 
-                        type="text" 
-                        className="form-control" 
-                        id='name'
-                        name='name' 
-                        value={name} 
-                        placeholder='Enter your name'
-                        onChange={onChange}
+                        <input
+                            type="text"
+                            className="form-control"
+                            id='name'
+                            name='name'
+                            value={name}
+                            placeholder='Enter your name'
+                            onChange={onChange}
                         />
                     </div>
                     <div class='form-group'>
-                        <input 
-                        type="text" 
-                        className="form-control" 
-                        id='email'
-                        name='email' 
-                        value={email} 
-                        placeholder='Enter your email'
-                        onChange={onChange}
+                        <input
+                            type="text"
+                            className="form-control"
+                            id='email'
+                            name='email'
+                            value={email}
+                            placeholder='Enter your email'
+                            onChange={onChange}
                         />
                     </div>
                     <div class='form-group'>
-                        <input 
-                        type="text" 
-                        className="form-control" 
-                        id='password'
-                        name='password' 
-                        value={password} 
-                        placeholder='Enter your password'
-                        onChange={onChange}
+                        <input
+                            type="text"
+                            className="form-control"
+                            id='password'
+                            name='password'
+                            value={password}
+                            placeholder='Enter your password'
+                            onChange={onChange}
                         />
                     </div>
                     <div class='form-group'>
-                        <input 
-                        type="text" 
-                        className="form-control" 
-                        id='password2'
-                        name='password2' 
-                        value={password2} 
-                        placeholder='Confirm your password'
-                        onChange={onChange}
+                        <input
+                            type="text"
+                            className="form-control"
+                            id='password2'
+                            name='password2'
+                            value={password2}
+                            placeholder='Confirm your password'
+                            onChange={onChange}
                         />
                     </div>
                     <button type='submit' class='btn btn-block'>
