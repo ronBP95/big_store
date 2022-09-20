@@ -7,8 +7,8 @@ const { registerUser, loginUser, getMe, allUsers } = require('../../controllers/
 router.get('/', allUsers)
 // For debugging
 
-router.post('/', registerUser)
-router.post('/', loginUser)
+router.post('/register', registerUser)
+router.post('/login', loginUser)
 router.get('/me', getMe)
 
 module.exports = router;

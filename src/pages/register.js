@@ -13,6 +13,14 @@ const Register = () => {
         password2: ''
     })
 
+    const firstLogin = async () => {
+        await axios({
+            method: "post",
+            url: "http://localhost:4000/api/users/login",
+            data: email, password
+        })
+    }
+
     const onChange = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -24,12 +32,13 @@ const Register = () => {
         e.preventDefault()
         await axios({
             method: "post",
-            url: "http://localhost:4000/api/users",
+            url: "http://localhost:4000/api/users/register",
             data: formData,
         })
             .then(function (res) {
                 // err
                 console.log(res)
+                firstLogin()
                 navigate("/")
                 toast("User created successfully")
             })
