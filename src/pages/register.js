@@ -17,7 +17,7 @@ const Register = () => {
         await axios({
             method: "post",
             url: "http://localhost:4000/api/users/login",
-            data: email, password
+            data: formData,
         })
     }
 
