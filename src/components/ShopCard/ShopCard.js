@@ -1,16 +1,16 @@
 import React from 'react';
 import { Grid, Paper, Box } from '@mui/material'
 
-const ShopCard = () => {
+const ShopCard = (props) => {
     return (
         <Grid item xs={3}>
             <Paper elevation={3} square>
-                "Image Goes here"
+                Image :{props.product.image}
                 <Box>
-                    Item Title
+                    Title :{props.product.title}
                 </Box>
                 <Box>
-                    Price
+                    Price :{props.product.price}
                 </Box>
             </Paper>
         </Grid>
