@@ -1,7 +1,9 @@
 import { Grid, Container } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
-import ShopCard from '../components/ShopCard/ShopCard'
+
+// Component Imports
+import { ShopCard, ShopNav } from '../components'
 
 const Shop = () => {
 
@@ -27,11 +29,14 @@ const Shop = () => {
     let list = products[0]
 
     return (
-        <Container sx={{marginY: 5, width: 900}}>
-            <Grid container spacing={5}>
-                {products.map((product) => <ShopCard product={product}/>)}
-            </Grid>
-        </Container>
+        <div>
+            <ShopNav />
+            <Container sx={{marginY: 5, width: 900}}>
+                <Grid container spacing={5}>
+                    {products.map((product) => <ShopCard product={product}/>)}
+                </Grid>
+            </Container>
+        </div>
     );
 }
 
