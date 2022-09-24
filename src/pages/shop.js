@@ -1,6 +1,7 @@
 import { Grid, Container } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
+import { navigate } from 'gatsby'
 
 // Component Imports
 import { ShopCard, ShopNav } from '../components'

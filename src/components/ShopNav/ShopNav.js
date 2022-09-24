@@ -8,6 +8,11 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { navigate } from 'gatsby'
+
+const sendHome = () => {
+    navigate('/')
+}
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -69,9 +74,9 @@ export default function ShopNav() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
           >
-            Big Store
+          <span onClick={sendHome} style={{cursor: "pointer"}}>Big Store</span>
           </Typography>
           <Search>
             <SearchIconWrapper>
