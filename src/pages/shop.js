@@ -1,4 +1,4 @@
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Box } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 
@@ -6,9 +6,9 @@ import axios from "axios"
 import { ShopCard, ShopNav, Nav } from '../components'
 import { Height } from '@mui/icons-material';
 
-const cont = {
-    width: "100vw",
-    background: "green"
+const productContainer = {
+    display: "flex",
+
 }
 
 const Shop = () => {
@@ -37,8 +37,7 @@ const Shop = () => {
     return (
         <div>
             <Nav />
-            <div className={cont}>test</div>
-            <Container sx={{marginY: 5, width: "100vw", backgroundColor: "blue"}}>
+            <Container maxWidth="xl" sx={{marginY: 5}}>
                 <Grid container spacing={5}>
                     {products.map((product) => <ShopCard product={product}/>)}
                 </Grid>
