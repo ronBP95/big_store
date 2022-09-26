@@ -82,6 +82,19 @@ const getMe = asyncHandler(async (req, res) => {
         email,
         message: "Successfully hit Profile",
     })
+
+})
+
+const deleteUser = asyncHandler(async (req, res) => {
+    const {_id, name, email } = await User.findByIdAndDelete(req.params.id)
+
+    res.status(200).json({
+        id: _id,
+        name,
+        email,
+        message: "Successfully deleted Profile",
+    })
+
 })
 
 const allUsers = asyncHandler(async (req, res) => {
@@ -101,4 +114,5 @@ module.exports = {
     loginUser,
     getMe,
     allUsers,
+    deleteUser,
 }

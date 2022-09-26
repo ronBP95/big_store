@@ -13,6 +13,12 @@ const userSchema = mongoose.Schema( {
     password: {
         type: String,
         required: [true, 'Please add a name']
+    },
+    cart: {
+        type: Array,
+    },
+    orderHistory: {
+        type: Array,
     }
 },
 {

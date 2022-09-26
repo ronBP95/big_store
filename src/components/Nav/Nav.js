@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Modal from '@mui/material/Modal';
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 // Material-UI Icon Imports
 import CloseIcon from '@mui/icons-material/Close';
@@ -67,6 +67,10 @@ const Nav = () => {
 
   const checkoutBar = {
     paddingBottom: '10px'
+  }
+
+  const profile = () => {
+    navigate('/profile')
   }
 
   const [open, setOpen] = React.useState(false);
@@ -164,7 +168,7 @@ const Nav = () => {
             ))}
           </Box>
           <Box>
-            <AccountCircleIcon />
+            <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer'}} />
             <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
             <Modal
               open={open}
