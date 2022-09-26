@@ -1,10 +1,15 @@
 import { Grid, Container } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
-import { navigate } from 'gatsby'
 
 // Component Imports
-import { ShopCard, ShopNav } from '../components'
+import { ShopCard, ShopNav, Nav } from '../components'
+import { Height } from '@mui/icons-material';
+
+const cont = {
+    width: "100vw",
+    background: "green"
+}
 
 const Shop = () => {
 
@@ -31,8 +36,9 @@ const Shop = () => {
 
     return (
         <div>
-            <ShopNav />
-            <Container sx={{marginY: 5, width: 900}}>
+            <Nav />
+            <div className={cont}>test</div>
+            <Container sx={{marginY: 5, width: "100vw", backgroundColor: "blue"}}>
                 <Grid container spacing={5}>
                     {products.map((product) => <ShopCard product={product}/>)}
                 </Grid>

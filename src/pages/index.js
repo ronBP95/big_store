@@ -26,7 +26,7 @@ const IndexPage = () => {
             Instead of waiting around for a store to be built, the developer made
             a fake one to represent the needs of the people.
             </Typography>
-            <Button sx={{paddingX: 0, paddingY: 1}}>Shop Now</Button>
+            <Button href="/shop" sx={{paddingX: 0, paddingY: 1}}>Shop Now</Button>
           </Box>
         </div>
       </div>

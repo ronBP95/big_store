@@ -12,8 +12,14 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from "gatsby"
 
-const pages = ['Products', 'Pricing', 'Blog'];
+// Routes
+const Products = <Button sx={{color: 'white'}} href='/shop'>products</Button>
+const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
+const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
+
+const pages = [About, Contact, Products, ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Nav = () => {
