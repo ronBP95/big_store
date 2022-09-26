@@ -1,32 +1,37 @@
 import * as React from "react"
-import { Nav, Hero, Footer } from '../components/index'
+import { Nav, Home } from '../components/index'
 import './index.css'
 import { ToastContainer } from "react-toastify"
 
-const mainStyles = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  margin: "0",
-  padding: "0",
-  width: "100%",
-  maxWidth: "100%",
-  // background: "green",
-}
-
-const credit = {
-  paddingBottom: "25px"
-}
+// Mui Imports
+import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
+import Button from '@mui/material/Button';
 
 const IndexPage = () => {
   return (
-    <main style={mainStyles}>
-      <Nav />
-      <Hero />
-      <Footer />
-      <div style={credit}>Made by Ron Magpantay 2022</div>
+    <div className="landing">
+      <div className="nav">
+        <Nav sx={{height: "7.4%", minHeight: 60}}/>
+      </div>
+      <div class="homePage">
+        <div className="landingImg">
+          images
+        </div>
+        <div className="landingTxt">
+          <Box sx={{width: 300}}>
+            <Typography variant="h5">Our Shop</Typography>
+            <Typography>BIG STORE shopping is an experience. One day the developer decided
+            that it was time to create a store that fit the needs of the people.
+            Instead of waiting around for a store to be built, the developer made
+            a fake one to represent the needs of the people.
+            </Typography>
+            <Button sx={{paddingX: 0, paddingY: 1}}>Shop Now</Button>
+          </Box>
+        </div>
+      </div>
       <ToastContainer />
-    </main>
+    </div>
   )
 }
 

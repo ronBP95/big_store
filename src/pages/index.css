@@ -18,6 +18,35 @@
     src: url(../fonts/OpenSans-Regular.ttf);
 }
 
+.landing {
+    height: 100vh;
+    width: 100vw;
+}
+
+.homePage {
+    display: flex;
+    height: 92.6%;
+    width: 100%;
+    background-color: blue;
+}
+
+.landingImg {
+    height: 100%;
+    width: 50%;
+    background: url('../images/store.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landingTxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    background-color: #aca6a2;
+}
+
 .heading {
     display: flex;
     justify-content: center;
