@@ -105,6 +105,14 @@ const allUsers = asyncHandler(async (req, res) => {
 
 // Cart Functions
 
+const viewCart = asyncHandler(async (req, res) => {
+    const cart = await User.findOne(req.params.id)
+    const object = cart.cart
+    res.status(200).json({
+        object
+    })
+})
+
 const addToCart = asyncHandler(async (req, res) => {
     const cart = await User.findOne(req.params.id)
     cart.cart.push({test: "Object2", id: "testId2"})
@@ -144,6 +152,7 @@ module.exports = {
     getMe,
     allUsers,
     deleteUser,
+    viewCart,
     addToCart,
     removeFromCart,
 }

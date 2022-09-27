@@ -6,13 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Modal from '@mui/material/Modal';
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 
 // Material-UI Icon Imports
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,25 +24,16 @@ const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
 const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
 
 const pages = [About, Contact, Products, ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Nav = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   // Modal Style
@@ -76,7 +65,6 @@ const Nav = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
 
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>

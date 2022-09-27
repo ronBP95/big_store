@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, getMe, allUsers, deleteUser, addToCart, removeFromCart } = require('../../controllers/userController.js')
+const { registerUser, loginUser, getMe, allUsers, deleteUser, viewCart, addToCart, removeFromCart } = require('../../controllers/userController.js')
 
 
 // For debugging
@@ -13,6 +13,7 @@ router.get('/me', getMe)
 router.delete('/:id', deleteUser)
 
 // Cart Routes
+router.get('/cart', viewCart)
 router.post('/add', addToCart)
 router.post('/remove', removeFromCart)
 
