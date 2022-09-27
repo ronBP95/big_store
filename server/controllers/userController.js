@@ -102,6 +102,18 @@ const allUsers = asyncHandler(async (req, res) => {
     res.status(200).json(all)
 })
 
+// Cart Functions
+
+const addToCart = asyncHandler(async (req, res) => {
+    const cart = await User.findOne(req.params.id)
+    cart.cart.push({test: "Object", id: "testId"})
+    cart.save()
+    console.log(cart.cart)
+    res.status(200).json({
+        message: 'Cart updated'
+    })
+})
+
 // Generate JWT
 const generateToken = (id) => {
     return jwt.sign({ id }, `${process.env.JWT_SECRET}`, {
@@ -115,4 +127,5 @@ module.exports = {
     getMe,
     allUsers,
     deleteUser,
+    addToCart,
 }
