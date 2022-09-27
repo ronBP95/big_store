@@ -2,40 +2,29 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Modal from '@mui/material/Modal';
 import { navigate } from "gatsby"
+import axios from 'axios'
 
 // Material-UI Icon Imports
 import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+// Component Imports
+import Cart from '../Cart/Cart'
 
 // Routes
 const Products = <Button sx={{color: 'white'}} href='/shop'>products</Button>
 const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
 const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
-
 const pages = [About, Contact, Products, ];
 
-const Nav = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
+const Nav = (props) => {
   // Modal Style
   const style = {
     display: 'flex',
@@ -65,6 +54,25 @@ const Nav = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
+  // Cart GET Request
+
+  const [cart, setCart] = React.useState([])
+
+  const getCart = () => {
+    axios.get('http://localhost:4000/api/users/cart?id=63255edb628679495f050e9e')
+    .then(function (response) {
+      setCart(response.data)
+    })
+  }
+
+  React.useEffect(() => {
+    try {
+      getCart();
+    } catch (error) {
+      console.error()
+    }
+  }, []);
 
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
@@ -88,43 +96,6 @@ const Nav = () => {
           >
             BIG STORE
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -145,10 +116,9 @@ const Nav = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={index}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -173,7 +143,7 @@ const Nav = () => {
                     Your Cart
                   </Typography>
                   <Typography sx={{ mt: 2, paddingLeft: 1, paddingRight: 1}} id="modal-modal-description">
-                    Your cart is empty. Fill it with something good.
+                    Cart
                   </Typography>
                   <Button href='/shop'>Shop All</Button>
                   </Box>

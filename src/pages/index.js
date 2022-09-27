@@ -9,35 +9,14 @@ import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 
 // Axios
-import axios from 'axios'
 
 const IndexPage = () => {
-
-  const [cart, setCart] = React.useState([])
-
-  const getCart = () => {
-    axios.get('http://localhost:4000/api/users/cart?id=63255edb628679495f050e9e')
-    .then(function (response) {
-      setCart(response.data)
-    })
-  }
-
-  React.useEffect(() => {
-    try {
-      getCart();
-    } catch (error) {
-      console.error()
-    }
-  }, []);
-
-  console.log(cart)
-
   return (
     <div className="landing">
       <div className="nav">
         <Nav sx={{ height: "7.4%", minHeight: 60 }} />
       </div>
-      <div class="homePage">
+      <div className="homePage">
         <div className="landingImg">
           images
         </div>

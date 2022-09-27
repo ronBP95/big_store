@@ -107,9 +107,10 @@ const allUsers = asyncHandler(async (req, res) => {
 
 const viewCart = asyncHandler(async (req, res) => {
     const cart = await User.findOne(req.params.id)
-    const object = cart.cart
-    res.status(200).json({
-        object
+    const array = cart.cart
+    console.log(array)
+    res.status(200).send({
+        array
     })
 })
 

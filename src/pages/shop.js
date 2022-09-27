@@ -31,7 +31,7 @@ const Shop = () => {
             <Nav />
             <Container maxWidth="xl" sx={{marginY: 5}}>
                 <Grid container spacing={5}>
-                    {products.map((product) => <ShopCard product={product}/>)}
+                    {products.map((product, index) => <ShopCard product={product} key={index}/>)}
                 </Grid>
             </Container>
         </div>
