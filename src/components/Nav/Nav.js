@@ -74,6 +74,10 @@ const Nav = (props) => {
     }
   }, []);
 
+  console.log(cart)
+  let object = (Object.values(cart))
+  console.log(object)
+
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
       <Container maxWidth="xl">
@@ -142,7 +146,9 @@ const Nav = (props) => {
                   <Typography id="modal-modal-title" variant="h6" component="h2">
                     Your Cart
                   </Typography>
-                  <Cart />
+                  <Box>
+                    {object.map((cartItem, index) => <Cart cartItem={cartItem} key={index}/>)}
+                  </Box>
                   <Button href='/shop'>Shop All</Button>
                   </Box>
                 <Box sx={checkoutBar}>
