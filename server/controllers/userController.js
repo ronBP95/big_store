@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel')
+const { find } = require('../models/userModel')
 
 // @desc    Register new user
 // @route   POST /api/users
@@ -106,11 +107,27 @@ const allUsers = asyncHandler(async (req, res) => {
 
 const addToCart = asyncHandler(async (req, res) => {
     const cart = await User.findOne(req.params.id)
-    cart.cart.push({test: "Object", id: "testId"})
+    cart.cart.push({test: "Object2", id: "testId2"})
     cart.save()
     console.log(cart.cart)
     res.status(200).json({
         message: 'Cart updated'
+    })
+})
+
+const removeFromCart = asyncHandler(async (req, res) => {
+    const cart = await User.findOne(req.params.id)
+    const object = cart.cart
+    console.log(object)
+    for (let i = 0; i < object.length; i++) {
+        if (object[i] === req.body.product) {
+            object.splice(i, 1)
+        }
+    }
+    console.log(object)
+    cart.save()
+    res.status(200).json({
+        message: 'Cart item deleted'
     })
 })
 
@@ -128,4 +145,5 @@ module.exports = {
     allUsers,
     deleteUser,
     addToCart,
+    removeFromCart,
 }
