@@ -3,13 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 
 // Component Imports
-import { ShopCard, ShopNav, Nav } from '../components'
-import { Height } from '@mui/icons-material';
-
-const productContainer = {
-    display: "flex",
-
-}
+import { ShopCard, Nav } from '../components'
 
 const Shop = () => {
 
@@ -31,8 +25,6 @@ const Shop = () => {
             console.error();
         }
     }, []);
-
-    let list = products[0]
 
     return (
         <div>
