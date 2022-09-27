@@ -142,9 +142,7 @@ const Nav = (props) => {
                   <Typography id="modal-modal-title" variant="h6" component="h2">
                     Your Cart
                   </Typography>
-                  <Typography sx={{ mt: 2, paddingLeft: 1, paddingRight: 1}} id="modal-modal-description">
-                    Cart
-                  </Typography>
+                  <Cart />
                   <Button href='/shop'>Shop All</Button>
                   </Box>
                 <Box sx={checkoutBar}>
