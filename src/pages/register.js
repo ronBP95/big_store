@@ -13,6 +13,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios'
+import 'react-toastify/dist/ReactToastify.css';
+import { navigate } from 'gatsby';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -28,15 +33,50 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+export default function Register() {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await axios({
+      method: "post",
+      url: "http://localhost:4000/api/users/register",
+      data: formData,
+    })
+    .then(function (res) {
+      // err
+      console.log(res)
+      firstLogin()
+      navigate("/")
+      toast("User created successfully")
+    })
+    .catch(function (res) {
+      // error
+      console.log(res)
+      toast("Invalid fields or User already exists")
+    })
   };
+
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    password: "",
+  })
+
+  const { name, email, password} = formData;
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+    }))
+  }
+
+  const firstLogin = async () => {
+    await axios({
+        method: "post",
+        url: "http://localhost:4000/api/users/login",
+        data: formData,
+    })
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -61,11 +101,13 @@ export default function SignUp() {
               <Grid item xs={12} sm={12}>
                 <TextField
                   autoComplete="given-name"
-                  name="fullName"
+                  name="name"
                   required
                   fullWidth
                   id="fullName"
                   label="Full Name"
+                  value={name}
+                  onChange={onChange}
                   autoFocus
                 />
               </Grid>
@@ -86,6 +128,8 @@ export default function SignUp() {
                   id="email"
                   label="Email Address"
                   name="email"
+                  value={email}
+                  onChange={onChange}
                   autoComplete="email"
                 />
               </Grid>
@@ -97,6 +141,8 @@ export default function SignUp() {
                   label="Password"
                   type="password"
                   id="password"
+                  value={password}
+                  onChange={onChange}
                   autoComplete="new-password"
                 />
               </Grid>
@@ -126,6 +172,7 @@ export default function SignUp() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
+      <ToastContainer />
     </ThemeProvider>
   );
 }
