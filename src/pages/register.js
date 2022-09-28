@@ -42,14 +42,12 @@ export default function Register() {
       data: formData,
     })
     .then(function (res) {
-      // err
       console.log(res)
       firstLogin()
       navigate("/")
       toast("User created successfully")
     })
     .catch(function (res) {
-      // error
       console.log(res)
       toast("Invalid fields or User already exists")
     })

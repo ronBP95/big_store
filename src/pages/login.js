@@ -11,7 +11,12 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { navigate } from 'gatsby';
+
+import { toast, ToastContainer } from 'react-toastify';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from 'axios'
+import 'react-toastify/dist/ReactToastify.css';
 
 function Copyright(props) {
   return (
@@ -28,15 +33,38 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+export default function Login() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios({
+      method: "post",
+      url: "http://localhost:4000/api/users/login",
+      data: formData,
+    })
+    .then(function (res) {
+      console.log(res)
+      navigate("/")
+      toast("Logged in successfully")
+    })
+    .catch(function (res) {
+      console.log(res)
+      toast("Invalid fields or User already exists")
+    })
   };
+
+  const [formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+  })
+
+  const { email, password } = formData;
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+    }))
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -64,6 +92,8 @@ export default function SignIn() {
               id="email"
               label="Email Address"
               name="email"
+              value={email}
+              onChange={onChange}
               autoComplete="email"
               autoFocus
             />
@@ -75,6 +105,8 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={onChange}
               autoComplete="current-password"
             />
             {/* <FormControlLabel
@@ -105,6 +137,7 @@ export default function SignIn() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      <ToastContainer />
     </ThemeProvider>
   );
 }
