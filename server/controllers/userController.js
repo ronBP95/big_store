@@ -87,7 +87,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // })
 
 const getMe = asyncHandler(async (req, res) => {
-    res.send("Get me hit")
+    res.json({ message: 'User data display' })
 })
 
 const deleteUser = asyncHandler(async (req, res) => {
