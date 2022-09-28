@@ -33,10 +33,10 @@ const Nav = (props) => {
     justifyContent: 'space-between',
     position: 'absolute',
     top: "50%",
-    left: '87.45%',
+    left: '84.9%',
     transform: 'translate(-50%, -50%)',
     paddingTop: "10px",
-    width: "25vw",
+    width: "30vw",
     height: "99vh",
     bgcolor: 'background.paper',
     border: '2px solid #000',
@@ -58,6 +58,7 @@ const Nav = (props) => {
   // Cart GET Request
 
   const [cart, setCart] = React.useState([])
+  const [parseCart, setParseCart] = React.useState([])
 
   const getCart = () => {
     axios.get('http://localhost:4000/api/users/cart?id=63255edb628679495f050e9e')
@@ -66,17 +67,18 @@ const Nav = (props) => {
     })
   }
 
+  const placeCart = () => {
+    setParseCart(cart.array)
+  }
+
   React.useEffect(() => {
     try {
       getCart();
+      placeCart();
     } catch (error) {
       console.error()
     }
   }, []);
-
-  console.log(cart)
-  let object = (Object.values(cart))
-  console.log(object)
 
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
@@ -147,7 +149,8 @@ const Nav = (props) => {
                     Your Cart
                   </Typography>
                   <Box>
-                    {object.map((cartItem, index) => <Cart cartItem={cartItem} key={index}/>)}
+                    {/* {cart.map((cartItem, index) => <Cart cartItem={cartItem} key={index}/>)} */}
+                    {parseCart.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />)}
                   </Box>
                   <Button href='/shop'>Shop All</Button>
                   </Box>
