@@ -72,12 +72,23 @@ const Nav = (props) => {
     getCart();
   }, [])
 
-  const AuthProvider = ({ children }) => {
-    const [isAuth, setIsAuth] = React.useState(() => {
-      const token = localStorage.getItem('token')
-      return token !== null;
-    })
+  const [isAuth, setIsAuth] = React.useState(false)
+
+  const checkAuth = () => {
+    const token = localStorage.getItem('token')
+    if (token !== null) {
+      console.log("Authenticated")
+      setIsAuth("true")
+    } else {
+      console.log("Not Authenticated")
+      setIsAuth("false")
+    }
   }
+
+  React.useEffect(() => {
+    console.log("Checking for auth...")
+    checkAuth();
+  })
 
   console.log(cart)
 
@@ -133,9 +144,8 @@ const Nav = (props) => {
             ))}
           </Box>
           <Box>
-            <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer'}} />
             <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
-            <Button href='/login' sx={{marginBottom: 2, marginLeft: 1}}>Login</Button>
+            {isAuth !== null ? <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} /> : <Button href='/login' sx={{marginBottom: 2, marginLeft: 1}}>Login</Button>}
             <Modal
               open={open}
               onClose={handleClose}
