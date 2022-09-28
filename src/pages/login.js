@@ -33,7 +33,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login() {
+export default function Login(dispatch) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios({
@@ -41,10 +41,12 @@ export default function Login() {
       url: "http://localhost:4000/api/users/login",
       data: formData,
     })
-    .then(function (res) {
+    .then(res => {
       console.log(res)
       navigate("/")
       toast("Logged in successfully")
+      const { token } = res.data
+      localStorage.setItem('token', token)
     })
     .catch(function (res) {
       console.log(res)

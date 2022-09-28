@@ -72,6 +72,13 @@ const Nav = (props) => {
     getCart();
   }, [])
 
+  const AuthProvider = ({ children }) => {
+    const [isAuth, setIsAuth] = React.useState(() => {
+      const token = localStorage.getItem('token')
+      return token !== null;
+    })
+  }
+
   console.log(cart)
 
   return (

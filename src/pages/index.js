@@ -11,6 +11,9 @@ import Button from '@mui/material/Button';
 // Axios
 
 const IndexPage = () => {
+
+  console.log("localStorage :", localStorage)
+
   return (
     <div className="landing">
       <div className="nav">
