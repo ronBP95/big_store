@@ -6,6 +6,9 @@ import axios from 'axios'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Container from '@mui/material/Container'
+import Button from '@mui/material/Button'
+import { navigate } from 'gatsby';
+import { toast } from 'react-toastify'
 
 const Profile = () => {
 
@@ -25,6 +28,7 @@ const Profile = () => {
         .then(function (res) {
             console.log(res)
             setName(res.data.name)
+            setEmail(res.data.email)
         })
     }
 
@@ -32,13 +36,13 @@ const Profile = () => {
         getMe();
     }, []);
 
-    console.log(name)
+    console.log("Name: ", name)
 
     return (
         <div>
             <Nav />
             <Container sx={{width: 750}}>
-                <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
+                <Box sx={{width: "100%", height: 100, marginTop: 5, padding: 1}}>
                     <Box>
                         Profile
                     </Box>
@@ -46,11 +50,11 @@ const Profile = () => {
                         Name: {name}
                     </Box>
                     <Box>
-                        Email
+                        Email: {email}
                     </Box>
-                </Paper>
+                </Box>
                 <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
-                    Order History
+                    Order History:
                 </Paper>
             </Container>
         </div>

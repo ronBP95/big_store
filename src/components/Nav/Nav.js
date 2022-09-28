@@ -17,6 +17,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 // Component Imports
 import Cart from '../Cart/Cart'
+import { toast } from 'react-toastify';
 
 // Routes
 const Products = <Button sx={{color: 'white'}} href='/shop'>products</Button>
@@ -73,15 +74,18 @@ const Nav = (props) => {
   }, [])
 
   const [isAuth, setIsAuth] = React.useState(false)
+  const [button, setButton] = React.useState()
 
   const checkAuth = () => {
     const token = localStorage.getItem('token')
-    if (token !== null) {
+    if (token !== "null") {
       console.log("Authenticated")
       setIsAuth("true")
+      let button = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
     } else {
       console.log("Not Authenticated")
       setIsAuth("false")
+
     }
   }
 
@@ -89,6 +93,13 @@ const Nav = (props) => {
     console.log("Checking for auth...")
     checkAuth();
   })
+
+  const handleLogout = () => {
+    localStorage.setItem('token', null)
+    navigate('/')
+    toast("Successfully logged out")
+    checkAuth();
+  }
 
   console.log(cart)
 
@@ -145,7 +156,9 @@ const Nav = (props) => {
           </Box>
           <Box>
             <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
-            {isAuth !== null ? <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} /> : <Button href='/login' sx={{marginBottom: 2, marginLeft: 1}}>Login</Button>}
+            <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
+            <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
+            <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
             <Modal
               open={open}
               onClose={handleClose}
