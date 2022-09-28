@@ -63,22 +63,16 @@ const Nav = (props) => {
   const getCart = () => {
     axios.get('http://localhost:4000/api/users/cart?id=63255edb628679495f050e9e')
     .then(function (response) {
-      setCart(response.data)
+      let filter = response.data.array
+      setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />))
     })
   }
 
-  const placeCart = () => {
-    setParseCart(cart.array)
-  }
-
   React.useEffect(() => {
-    try {
-      getCart();
-      placeCart();
-    } catch (error) {
-      console.error()
-    }
-  }, []);
+    getCart();
+  }, [])
+
+  console.log(cart)
 
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
@@ -150,7 +144,7 @@ const Nav = (props) => {
                   </Typography>
                   <Box>
                     {/* {cart.map((cartItem, index) => <Cart cartItem={cartItem} key={index}/>)} */}
-                    {parseCart.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />)}
+                    {cart}
                   </Box>
                   <Button href='/shop'>Shop All</Button>
                   </Box>

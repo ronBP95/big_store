@@ -4,7 +4,7 @@ import { Grid, Container } from '@mui/material'
 const Cart = (props) => {
     return (
         <div>
-            Id: {props.cartItem.test} 
+            Id: {props.cartItem.id} 
             +
             Test: {props.cartItem.test}
         </div>
