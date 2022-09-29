@@ -85,7 +85,7 @@ const getMe = asyncHandler(async (req, res) => {
 })
 
 const deleteUser = asyncHandler(async (req, res) => {
-    const {_id, name, email } = await User.findByIdAndDelete(req.params.id)
+    const { _id, name, email } = await User.findByIdAndDelete(req.params.id)
 
     res.status(200).json({
         id: _id,
@@ -148,6 +148,7 @@ const addToCart = asyncHandler(async (req, res) => {
 const removeFromCart = asyncHandler(async (req, res) => {
     const cart = await User.findById(req.user.id)
     const item = req.body.id
+    console.log("Item came in as: ", item)
     const object = cart.cart
     for (let i = 0; i < object.length; i++) {
         if (Number(object[i].id) === Number(item)) {
