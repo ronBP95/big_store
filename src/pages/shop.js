@@ -26,12 +26,14 @@ const Shop = () => {
         }
     }, []);
 
+    console.log(products[0])
+
     return (
         <div>
             <Nav />
             <Container maxWidth="xl" sx={{marginY: 5}}>
                 <Grid container spacing={5}>
-                    {products.map((product, index) => <ShopCard product={product} key={index}/>)}
+                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index}/>)}
                 </Grid>
             </Container>
         </div>

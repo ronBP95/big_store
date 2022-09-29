@@ -159,6 +159,7 @@ const Nav = (props) => {
             <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
             <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
             <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+            <Button sx={{marginBottom: 2, marginLeft: 1}} href='/checkout'>Checkout</Button>
             <Modal
               open={open}
               onClose={handleClose}

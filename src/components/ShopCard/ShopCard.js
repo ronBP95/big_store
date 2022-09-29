@@ -1,8 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import { Grid, Paper, Box, Button } from '@mui/material'
 import './ShopCard.css'
+import axios from 'axios'
 
 const ShopCard = (props) => {
+    
+    const [itemInfo, setItemInfo] = React.useState({
+        title: props.product.title,
+        price: props.product.price,
+        image: props.product.image,
+    })
+
+    const handleCartAdd = (e) => {
+        e.preventDefault();
+        setItemInfo(itemInfo)
+        console.log(itemInfo)
+    }
+
     return (
         <Grid item xs={3}>
             <Paper sx={{
@@ -28,7 +42,7 @@ const ShopCard = (props) => {
                 <Box>
                     ${props.product.price}
                 </Box>
-                <Button sx={{}}>
+                <Button onClick={handleCartAdd}>
                     Add to Cart
                 </Button>
             </Paper>
