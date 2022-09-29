@@ -25,7 +25,7 @@ const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
 const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
 const pages = [About, Contact, Products, ];
 
-const Nav = (props) => {
+const Nav = () => {
   // Modal Style
   const style = {
     display: 'flex',
