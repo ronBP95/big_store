@@ -3,6 +3,7 @@ import { Grid, Paper, Box, Button } from '@mui/material'
 import './ShopCard.css'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify';
+import { navigate } from 'gatsby';
 
 const ShopCard = (props) => {
 
@@ -14,19 +15,25 @@ const ShopCard = (props) => {
     })
 
     const handleCartAdd = async (e) => {
-        e.preventDefault();
-        await axios({
-            method: "post",
-            url: "http://localhost:4000/api/users/add",
-            data: itemInfo,
-        })
-        .then(function (res) {
-            toast("Item Added to Cart")
-        })
-        .catch(function (res) {
-            toast("Cart is full or something went wrong")
-        })
-        console.log(itemInfo)
+        if (props.isAuth) {
+            e.preventDefault();
+            await axios({
+                method: "post",
+                url: "http://localhost:4000/api/users/add",
+                data: itemInfo,
+            })
+            .then(function (res) {
+                toast.success("Item Added to Cart", {
+                    toastId: "cart"
+                })
+            })
+            .catch(function (res) {
+                toast("Cart is full or something went wrong")
+            })
+            console.log(itemInfo)
+        } else {
+            navigate('/login')
+        }
     }
 
     return (
@@ -58,7 +65,6 @@ const ShopCard = (props) => {
                     Add to Cart
                 </Button>
             </Paper>
-            <ToastContainer />
         </Grid>
     );
 }

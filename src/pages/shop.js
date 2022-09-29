@@ -1,6 +1,7 @@
 import { Grid, Container, Box } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
+import { ToastContainer } from 'react-toastify';
 
 // Component Imports
 import { ShopCard, Nav } from '../components'
@@ -26,6 +27,15 @@ const Shop = () => {
         }
     }, []);
 
+    let token = localStorage.getItem('token')
+    const [isAuth, setIsAuth] = useState(false)
+    
+    useEffect(() => {
+        if (token !== null) {
+            setIsAuth(true)
+        }
+    })
+
     console.log(products[0])
 
     return (
@@ -33,8 +43,9 @@ const Shop = () => {
             <Nav />
             <Container maxWidth="xl" sx={{marginY: 5}}>
                 <Grid container spacing={5}>
-                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index}/>)}
+                    {products.map((product, index) => <ShopCard isAuth={isAuth} product={product} key={index} listId={index}/>)}
                 </Grid>
+            <ToastContainer />
             </Container>
         </div>
     );

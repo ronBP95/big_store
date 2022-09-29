@@ -26,6 +26,25 @@ const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
 const pages = [About, Contact, Products, ];
 
 const Nav = () => {
+
+  const [isAuth, setIsAuth] = React.useState(false)
+
+  const checkAuth = () => {
+    const token = localStorage.getItem('token')
+    if (token !== "null") {
+      console.log("Authenticated")
+      setIsAuth(true)
+    } else {
+      console.log("Not Authenticated")
+      setIsAuth(false)
+    }
+  }
+
+  React.useEffect(() => {
+    console.log("Checking for auth...")
+    checkAuth();
+  }, [])
+
   // Modal Style
   const style = {
     display: 'flex',
@@ -53,44 +72,38 @@ const Nav = () => {
   }
 
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    checkAuth();
+    getCart();
+    setOpen(true);
+  }
   const handleClose = () => setOpen(false);
   
   // Cart GET Request
 
   const [cart, setCart] = React.useState([])
   const [parseCart, setParseCart] = React.useState([])
+  let token = localStorage.getItem('token')
 
   const getCart = () => {
-    axios.get('http://localhost:4000/api/users/cart?id=63255edb628679495f050e9e')
-    .then(function (response) {
-      let filter = response.data.array
-      setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />))
-    })
-  }
-
-  React.useEffect(() => {
-    // getCart();
-  }, [])
-
-  const [isAuth, setIsAuth] = React.useState(false)
-  const [button, setButton] = React.useState()
-
-  const checkAuth = () => {
-    const token = localStorage.getItem('token')
-    if (token !== "null") {
-      console.log("Authenticated")
-      setIsAuth(true)
-    } else {
-      console.log("Not Authenticated")
-      setIsAuth(false)
+    if (isAuth) {
+      axios.get('http://localhost:4000/api/users/cart', {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      })
+      .then(function (response) {
+        let filter = response.data.array
+        setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />))
+      })
+    } else if (!isAuth) {
+      setCart(null)
     }
   }
 
   React.useEffect(() => {
-    console.log("Checking for auth...")
-    checkAuth();
-  })
+    getCart();
+  }, [])
 
   const handleLogout = () => {
     localStorage.setItem('token', null)
@@ -99,11 +112,17 @@ const Nav = () => {
     checkAuth();
   }
 
-  let AuthButton
+  let cartButton
+  let authButton
+  let profileButton
   if (isAuth) {
-    AuthButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+    cartButton = <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
+    profileButton = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
+    authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
   } else {
-    AuthButton = <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
+    cartButton = null
+    profileButton = null
+    authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
   }
 
   return (
@@ -158,12 +177,9 @@ const Nav = () => {
             ))}
           </Box>
           <Box>
-            <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
-            <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
-            {/* <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
-            <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button> */}
-            {AuthButton}
-            <Button sx={{marginBottom: 2, marginLeft: 1}} href='/checkout'>Checkout</Button>
+            {cartButton}
+            {profileButton}
+            {authButton}
             <Modal
               open={open}
               onClose={handleClose}
@@ -179,7 +195,6 @@ const Nav = () => {
                     Your Cart
                   </Typography>
                   <Box>
-                    {/* {cart.map((cartItem, index) => <Cart cartItem={cartItem} key={index}/>)} */}
                     {cart}
                   </Box>
                   <Button href='/shop'>Shop All</Button>

@@ -43,7 +43,7 @@ export default function Login(dispatch) {
     })
     .then(res => {
       console.log(res)
-      navigate("/")
+      navigate("/shop")
       toast("Logged in successfully")
       const { token } = res.data
       localStorage.setItem('token', token)
