@@ -189,20 +189,19 @@ const Nav = () => {
               aria-describedby="modal-modal-description"
               >
               <Box sx={style}>
-                <Box sx={{textAlign: 'center', width: '100%'}}>
-                  <Box sx={{display: 'flex', justifyContent: 'end', width: '100%'}}>
-                    <CloseIcon sx={{cursor: 'pointer', padding: 0.5}} onClick={handleClose}/>
-                  </Box>
-                  <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Your Cart
-                  </Typography>
-                  <Box>
-                    {cart}
-                  </Box>
-                  <Button href='/shop'>Shop All</Button>
+                  <Box sx={{textAlign: 'center', width: '100%'}}>
+                    <Box sx={{display: 'flex', justifyContent: 'end', width: '100%'}}>
+                      <CloseIcon sx={{cursor: 'pointer', padding: 0.5}} onClick={handleClose}/>
+                    </Box>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                      Your Cart
+                    </Typography>
+                    <Box>
+                      {cart}
+                    </Box>
                   </Box>
                 <Box sx={checkoutBar}>
-                  Checkout, HR, Subtotal, Shipping
+                  <Button href='/checkout'>Checkout</Button>
                 </Box>
               </Box>
             </Modal>
