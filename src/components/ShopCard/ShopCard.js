@@ -2,18 +2,30 @@ import * as React from 'react';
 import { Grid, Paper, Box, Button } from '@mui/material'
 import './ShopCard.css'
 import axios from 'axios'
+import { toast, ToastContainer } from 'react-toastify';
 
 const ShopCard = (props) => {
-    
-    const [itemInfo, setItemInfo] = React.useState({
+
+    const [itemInfo] = React.useState({
+        id: props.product.id,
         title: props.product.title,
         price: props.product.price,
         image: props.product.image,
     })
 
-    const handleCartAdd = (e) => {
+    const handleCartAdd = async (e) => {
         e.preventDefault();
-        setItemInfo(itemInfo)
+        await axios({
+            method: "post",
+            url: "http://localhost:4000/api/users/add",
+            data: itemInfo,
+        })
+        .then(function (res) {
+            toast("Item Added to Cart")
+        })
+        .catch(function (res) {
+            toast("Cart is full or something went wrong")
+        })
         console.log(itemInfo)
     }
 
@@ -46,6 +58,7 @@ const ShopCard = (props) => {
                     Add to Cart
                 </Button>
             </Paper>
+            <ToastContainer />
         </Grid>
     );
 }

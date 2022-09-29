@@ -13,7 +13,7 @@ router.get('/me', protect, getMe )
 router.delete('/:id', deleteUser)
 
 // Cart Routes
-router.get('/cart', viewCart)
+router.get('/cart', protect, viewCart)
 router.post('/add', addToCart)
 router.post('/remove', removeFromCart)
 

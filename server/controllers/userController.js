@@ -113,7 +113,7 @@ const viewCart = asyncHandler(async (req, res) => {
 
 const addToCart = asyncHandler(async (req, res) => {
     const cart = await User.findOne(req.params.id)
-    cart.cart.push({test: "Object2", id: "testId2"})
+    cart.cart.push(req.body)
     cart.save()
     console.log(cart.cart)
     res.status(200).json({

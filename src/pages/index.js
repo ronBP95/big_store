@@ -20,9 +20,7 @@ const IndexPage = () => {
         <Nav sx={{ height: "7.4%", minHeight: 60 }} />
       </div>
       <div className="homePage">
-        <div className="landingImg">
-          images
-        </div>
+        <div className="landingImg"></div>
         <div className="landingTxt">
           <Box sx={{ width: 300 }}>
             <Typography variant="h5" sx={{marginY: 1}}>Our Shop</Typography>

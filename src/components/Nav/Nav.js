@@ -70,7 +70,7 @@ const Nav = (props) => {
   }
 
   React.useEffect(() => {
-    getCart();
+    // getCart();
   }, [])
 
   const [isAuth, setIsAuth] = React.useState(false)
@@ -80,12 +80,10 @@ const Nav = (props) => {
     const token = localStorage.getItem('token')
     if (token !== "null") {
       console.log("Authenticated")
-      setIsAuth("true")
-      let button = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
+      setIsAuth(true)
     } else {
       console.log("Not Authenticated")
-      setIsAuth("false")
-
+      setIsAuth(false)
     }
   }
 
@@ -101,7 +99,12 @@ const Nav = (props) => {
     checkAuth();
   }
 
-  console.log(cart)
+  let AuthButton
+  if (isAuth) {
+    AuthButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+  } else {
+    AuthButton = <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
+  }
 
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
@@ -157,8 +160,9 @@ const Nav = (props) => {
           <Box>
             <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
             <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
-            <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
-            <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+            {/* <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
+            <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button> */}
+            {AuthButton}
             <Button sx={{marginBottom: 2, marginLeft: 1}} href='/checkout'>Checkout</Button>
             <Modal
               open={open}
