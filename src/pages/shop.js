@@ -13,7 +13,7 @@ const Shop = () => {
     console.log(products)
 
     const getProducts = () => {
-        axios.get('https://fakestoreapi.com/products?limit=4')
+        axios.get('https://fakestoreapi.com/products')
         .then(function (response) {
             setProducts(response.data)
         })

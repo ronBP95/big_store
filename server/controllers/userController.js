@@ -113,7 +113,7 @@ const viewCart = asyncHandler(async (req, res) => {
 
 const addToCart = asyncHandler(async (req, res) => {
     const cart = await User.findById(req.user.id)
-    if (cart.cart.length < 3) {
+    if (cart.cart.length < 5) {
         cart.cart.push(req.body)
         cart.save()
         console.log(cart.cart)
