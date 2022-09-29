@@ -74,6 +74,12 @@ export default function Register() {
         url: "http://localhost:4000/api/users/login",
         data: formData,
     })
+    .then(res => {
+      console.log(res)
+      navigate("/shop")
+      const { token } = res.data
+      localStorage.setItem('token', token)
+    })
   }
 
   return (

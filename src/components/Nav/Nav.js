@@ -73,7 +73,6 @@ const Nav = () => {
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    checkAuth();
     getCart();
     setOpen(true);
   }
@@ -82,7 +81,6 @@ const Nav = () => {
   // Cart GET Request
 
   const [cart, setCart] = React.useState([])
-  const [parseCart, setParseCart] = React.useState([])
   let token = localStorage.getItem('token')
 
   const getCart = () => {
@@ -114,15 +112,18 @@ const Nav = () => {
 
   let cartButton
   let authButton
+  let registerButton
   let profileButton
   if (isAuth) {
     cartButton = <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
     profileButton = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
     authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+    registerButton = null
   } else {
     cartButton = null
     profileButton = null
     authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} href='/login'>Log In</Button>
+    registerButton = <Button sx={{marginBottom: 2, marginLeft: 1}} href='/register'>Register</Button>
   }
 
   return (
@@ -180,6 +181,7 @@ const Nav = () => {
             {cartButton}
             {profileButton}
             {authButton}
+            {registerButton}
             <Modal
               open={open}
               onClose={handleClose}

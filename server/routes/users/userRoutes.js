@@ -10,11 +10,11 @@ router.get('/', allUsers)
 router.post('/register', registerUser)
 router.post('/login', loginUser)
 router.get('/me', protect, getMe )
-router.delete('/:id', deleteUser)
+router.delete('/:id', protect, deleteUser)
 
 // Cart Routes
 router.get('/cart', protect, viewCart)
-router.post('/add', addToCart)
-router.post('/remove', removeFromCart)
+router.post('/add', protect, addToCart)
+router.post('/remove', protect, removeFromCart)
 
 module.exports = router;

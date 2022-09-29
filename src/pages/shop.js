@@ -33,17 +33,18 @@ const Shop = () => {
     useEffect(() => {
         if (token !== null) {
             setIsAuth(true)
+        } else if (token === null) {
+            setIsAuth(false)
         }
     })
 
-    console.log(products[0])
-
+    console.log(localStorage)
     return (
         <div>
             <Nav />
             <Container maxWidth="xl" sx={{marginY: 5}}>
                 <Grid container spacing={5}>
-                    {products.map((product, index) => <ShopCard isAuth={isAuth} product={product} key={index} listId={index}/>)}
+                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index}/>)}
                 </Grid>
             <ToastContainer />
             </Container>

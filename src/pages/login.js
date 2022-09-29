@@ -33,7 +33,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login(dispatch) {
+export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios({

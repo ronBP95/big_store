@@ -103,7 +103,7 @@ const allUsers = asyncHandler(async (req, res) => {
 // Cart Functions
 
 const viewCart = asyncHandler(async (req, res) => {
-    const cart = await User.findOne(req.params.id)
+    const cart = await User.findById(req.user.id)
     const array = cart.cart
     console.log(array)
     res.status(200).send({
@@ -112,13 +112,20 @@ const viewCart = asyncHandler(async (req, res) => {
 })
 
 const addToCart = asyncHandler(async (req, res) => {
-    const cart = await User.findOne(req.params.id)
-    cart.cart.push(req.body)
-    cart.save()
-    console.log(cart.cart)
-    res.status(200).json({
-        message: 'Cart updated'
-    })
+    const cart = await User.findById(req.user.id)
+    if (cart.cart.length < 3) {
+        cart.cart.push(req.body)
+        cart.save()
+        console.log(cart.cart)
+        res.status(200).json({
+            message: 'Cart updated'
+        })
+    } else {
+        console.log('Cart is full')
+        res.status(400).json({
+            message: 'Cart is full.'
+        })
+    }
 })
 
 const removeFromCart = asyncHandler(async (req, res) => {
