@@ -72,12 +72,13 @@ const loginUser = asyncHandler(async (req, res) => {
 })
 
 const getMe = asyncHandler(async (req, res) => {
-    const { _id, name, email } = await User.findById(req.user.id)
+    const { _id, name, email, cart } = await User.findById(req.user.id)
     console.log( _id, name, email )
     res.status(200).json({
         id: _id,
         name,
         email,
+        cart,
         message: "Profile successfully grabbed",
     })
 
@@ -146,15 +147,15 @@ const addToCart = asyncHandler(async (req, res) => {
 
 const removeFromCart = asyncHandler(async (req, res) => {
     const cart = await User.findById(req.user.id)
+    const item = req.body.id
     const object = cart.cart
     for (let i = 0; i < object.length; i++) {
-        if (object[i].id === req.params.id) {
-            object.splice(i, 1)
+        if (Number(object[i].id) === Number(item)) {
             console.log('splice triggered')
+            object.splice(i, 1)
         }
     }
     cart.save()
-    console.log(object[0].id)
     res.status(200).json({
         message: 'Cart item deleted'
     })
