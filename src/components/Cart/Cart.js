@@ -8,11 +8,7 @@ const imageStyle = {
     height: "50px"
 }
 
-const Cart = (props) => {
-
-React.useEffect(() => {
-    console.log('page refresh')
-}, [handleRemove]);
+const Cart = (props, { handleOpen }) => {
 
 let token = localStorage.getItem('token')
 const [remove, setRemove] = React.useState({
@@ -20,8 +16,8 @@ const [remove, setRemove] = React.useState({
 })
 
 const handleRemove = async () => {
-console.log('Checking props: ', props.cartItem.id)
-console.log('Checking remove: ', remove)
+console.log('Checking key', props.number)
+console.log('All props: ', props.cartItem)
 await axios({
     method: "post",
     url: "http://localhost:4000/api/users/remove",

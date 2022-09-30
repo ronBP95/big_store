@@ -83,8 +83,9 @@ const Nav = () => {
   const [cart, setCart] = React.useState([])
   let token = localStorage.getItem('token')
 
+  const [refresh, setRefresh] = React.useState(false)
+
   const getCart = () => {
-    if (isAuth) {
       axios.get('http://localhost:4000/api/users/cart', {
         headers: {
           'Authorization': 'Bearer ' + token
@@ -92,11 +93,8 @@ const Nav = () => {
       })
       .then(function (response) {
         let filter = response.data.array
-        setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} />))
+        setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} number={index} handleOpen={handleOpen} />))
       })
-    } else if (!isAuth) {
-      setCart(null)
-    }
   }
 
   React.useEffect(() => {
