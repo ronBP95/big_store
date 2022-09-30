@@ -93,7 +93,7 @@ const Nav = () => {
       })
       .then(function (response) {
         let filter = response.data.array
-        setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} number={index} handleOpen={handleOpen} />))
+        setCart(filter.map((cartItem, index) => <Cart cartItem={cartItem} key={index} number={index}/>))
       })
   }
 
