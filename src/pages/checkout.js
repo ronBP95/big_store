@@ -1,8 +1,25 @@
 import * as React from 'react';
 import { Container, Box, Typography, Button, Paper } from '@mui/material';
 import CheckoutNav from '../components/CheckoutNav/CheckoutNav'
+import axios from 'axios'
 
 const Checkout = () => {
+
+  const [cart, setCart]= React.useState([])
+  let token = localStorage.getItem('token')
+
+  const getCart = () => {
+    axios.get('http://localhost:4000/api/users/cart', {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
+    .then(function (response) {
+      let filter = response.data.array
+      setCart(filter.map((cartItem, index) => <div cartItem={cartItem} key={index} number={index}></div>))
+    })
+  }
+
   return (
     <div>
       <CheckoutNav />
@@ -17,7 +34,7 @@ const Checkout = () => {
           <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 2, paddingRight: 3}}>
               <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
                 <Typography>Products</Typography>
-                <Typography>$Price</Typography>
+                <Typography>{cart}</Typography>
               </Box>
               <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
                 <Typography>Shipping</Typography>
