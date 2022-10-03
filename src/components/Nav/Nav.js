@@ -98,7 +98,7 @@ const Nav = () => {
   }
 
   React.useEffect(() => {
-    getCart();
+    // getCart();
   }, [])
 
   const handleLogout = () => {

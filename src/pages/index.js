@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Nav } from '../components/index'
 import './index.css'
 import { ToastContainer } from "react-toastify"
 
@@ -8,16 +7,15 @@ import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 
-// Axios
+// Component Imports
+import { HomeNav } from '../components/index'
+
 
 const IndexPage = () => {
-
-  console.log("localStorage :", localStorage)
-
   return (
     <div className="landing">
       <div className="nav">
-        <Nav sx={{ height: "7.4%", minHeight: 60 }} />
+        <HomeNav sx={{ height: "7.4%", minHeight: 60 }} />
       </div>
       <div className="homePage">
         <div className="landingImg"></div>
