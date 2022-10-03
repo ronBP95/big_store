@@ -9,12 +9,15 @@ export default function HomeNav() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor: "#444444"}}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Big Store
-          </Typography>
-          <Button color="inherit" href='/login'>Login</Button>
-          <Button color="inherit" href='/register'>Register</Button>
+        <Toolbar sx= {{display: 'flex', justifyContent: 'space-between'}}>
+            <Box sx= {{ flex: 1 }} />
+                <Typography variant="h6" component="div">
+                    Big Store
+                </Typography>
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                <Button color="inherit" href='/login'>Login</Button>
+                <Button color="inherit" href='/register'>Register</Button>
+            </Box>
         </Toolbar>
       </AppBar>
     </Box>
