@@ -16,7 +16,7 @@ export default function HomeNav() {
                 </Typography>
             <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
                 <Button color="inherit" href='/login'>Login</Button>
-                <Button color="inherit" href='/register'>Register</Button>
+                <Button sx={{ color: '#FF1493', paddingRight: 2, marginLeft: 2}} href='/register'>Register</Button>
             </Box>
         </Toolbar>
       </AppBar>
