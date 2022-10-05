@@ -9,7 +9,7 @@ Live View: "Not deployed at this time"
 3. <a href="/cart">Cart</a>
 4. <a href="/checkout">Checkout</a>
 5. <a href="/email">Email</a>
-6. <a href="/email">Analytics</a>
+6. <a href="/email">Google Analytics</a>
 
 ### Authentication
 
