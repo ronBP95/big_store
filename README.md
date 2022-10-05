@@ -9,6 +9,7 @@ Live View: "Not deployed at this time"
 3. <a href="/cart">Cart</a>
 4. <a href="/checkout">Checkout</a>
 5. <a href="/email">Email</a>
+6. <a href="/email">Analytics</a>
 
 ### Authentication
 
@@ -29,3 +30,7 @@ This feature is being built out to map out the cart items and add up the price o
 ### Email
 
 The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials.
+
+### Analytics
+
+Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present.
