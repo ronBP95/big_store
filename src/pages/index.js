@@ -10,16 +10,18 @@ import Button from '@mui/material/Button';
 // Component Imports
 import { HomeNav } from '../components/index'
 
+// Image Imports
+import storefront from '../images/storefront.jpg'
 
 const IndexPage = () => {
   return (
-    <div className="landing">
-      <div className="nav">
+    <Box className="landing">
+      <Box className="nav">
         <HomeNav sx={{ height: "7.4%", minHeight: 60 }} />
-      </div>
-      <div className="homePage">
-        <div className="landingImg"></div>
-        <div className="landingTxt">
+      </Box>
+      <Box className="homePage">
+        <Box className="landingImg"></Box>
+        <Box className="landingTxt">
           <Box sx={{ width: 300 }}>
             <Typography variant="h5" sx={{marginY: 1}}>Our Shop</Typography>
             <Typography>BIG STORE shopping is an experience. One day the developer decided
@@ -29,10 +31,10 @@ const IndexPage = () => {
             </Typography>
             <Button href="/shop" sx={{ paddingX: 0, paddingY: 1 }}>Shop Now</Button>
           </Box>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <ToastContainer />
-    </div>
+    </Box>
   )
 }
 
