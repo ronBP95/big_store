@@ -29,7 +29,9 @@ const IndexPage = () => {
             <Typography variant="h4" sx={{color: "white", fontSize: "27pt"}}>UPGRADE YOUR SHOPPING</Typography>
             <Box sx={{marginTop: 10, textAlign: "center"}}>
               <Typography sx={{color: "white"}}>Enjoy new products available only to members</Typography>
-              <Button variant="contained" sx={{marginTop: 3, marginBottom: 2, background: "#ff3366", height: "70px", width: "200px"}}>Register</Button>
+              <Button variant="contained" sx={{marginTop: 3, marginBottom: 2, background: "#ff3366", height: "70px", width: "200px", "&.MuiButtonBase-root:hover": {
+                bgcolor: "red"
+              }}}>Register</Button>
               <Typography sx={{color: "white"}}>Discover the experience</Typography>
             </Box>
           </Box>
