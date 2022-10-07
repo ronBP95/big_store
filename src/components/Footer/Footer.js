@@ -1,71 +1,61 @@
-import React from 'react';
+import * as React from 'react';
 
-const footStyle = {
-    display:"flex",
-    height: "50vh",
-    width: "75vw",
-    maxWidth: "100%",
-    marginTop: "50px",
-    // background: "blue",
-    borderTop: "5px solid #142b6f",
+// Mui Imports
+import { Typography, Grid, Container, Box } from '@mui/material';
+
+// Icon Imports
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+const containerStyle = {
+    width: "100%",
+    height: "35%",
+    background: "#fff5f8"
 }
 
-const card = {
-    paddingTop: "25px",
-    width: "25%",
-    height: "65%",
-    borderBottom: "1px solid gray",
-    // background: "red",
-    lineHeight: "40px",
-    listStyleType: "none",
-    fontFamily: "Open Sans",
-    fontSize: "13pt",
-}
-
-const footLogo = {
-    paddingTop: "25px",
-    width: "25%",
+const line = {
+    width: "2em",
     fontSize: "16pt",
-    textDecoration: "none",
-    // background: "green",
-    color: "navy",
-    height: "65%",
-    borderBottom: "1px solid gray",
+    marginTop: "0.5em",
+    height: "2px",
+    background: "black",
 }
 
-const cardHeader = {
-    cursor: "default",
+const header = {
+    fontSize: "20pt"
 }
 
-const cardAnchor = {
-    // background: "green",
-    cursor: "pointer",
+const options = {
+    fontSize: "12pt"
 }
 
 const Footer = () => {
     return (
-        <div style={footStyle}>
-            <h1 style={footLogo}><a>Logo</a></h1>
-            <ul style={card}>
-                <h3 style={cardHeader}>SHOP</h3>
-                <li><a style={cardAnchor}>Hats</a></li>
-                <li><a style={cardAnchor}>Shirts</a></li>
-                <li><a style={cardAnchor}>Pants</a></li>
-                <li><a style={cardAnchor}>Shoes</a></li>
-            </ul>
-            <ul style={card}>
-                <h3 style={cardHeader}>ABOUT</h3>
-                <li><a style={cardAnchor}>Mission</a></li>
-                <li><a style={cardAnchor}>Team</a></li>
-                <li><a style={cardAnchor}>Identity</a></li>
-                <li><a style={cardAnchor}>Commitment</a></li>
-            </ul>
-            <ul style={card}>
-                <h3 style={cardHeader}>MORE</h3>
-                <li><a style={cardAnchor}>Contact</a></li>
-                <li><a style={cardAnchor}>Socials</a></li>
-                <li><a style={cardAnchor}>Careers</a></li>
-            </ul>
+        <div style={containerStyle}>
+            <Container sx={{width: "100%"}}>
+                <Grid container spacing={2} sx={{paddingTop: 5}}>
+                    <Grid item xs={4}>
+                        <Box sx={{display: "flex", paddingTop: 6, textAlign: "left"}}>
+                            <GitHubIcon sx={{marginRight: 5, fontSize: "44pt"}}/>
+                            <LinkedInIcon sx={{fontSize: "44pt"}}/>
+                        </Box>
+                        <Typography sx={{fontSize: "16pt", marginTop: 3}}>© Big Store 2022</Typography>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Typography style={header}>Legal</Typography>
+                        <hr style={line}></hr>
+                        <Typography style={options}>Terms</Typography>
+                        <Typography>Privacy</Typography>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Typography style={header}>PlaceHolder</Typography>
+                        <hr style={line}></hr>
+                        <Typography>Terms</Typography>
+                        <Typography>Privacy</Typography>
+                    </Grid>
+                </Grid>
+                <Typography sx={{marginTop: 3}}>Website made by Ron Magpantay. Source code is available on Github.</Typography>
+            </Container>
         </div>
     );
 }

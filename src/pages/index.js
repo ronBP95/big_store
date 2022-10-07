@@ -18,7 +18,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import KeyIcon from '@mui/icons-material/Key';
 
 // Component Imports
-import { HomeNav, QuiltedImageList } from '../components/index'
+import { HomeNav, QuiltedImageList, Footer } from '../components/index'
 
 // Image Imports
 import storefront from '../images/storefront.jpg'
@@ -157,6 +157,7 @@ const IndexPage = () => {
         <Button sx={{paddingBottom: 20}}>Start Now</Button>
       </div>
       {/* Second Grid Container */}
+      <Footer />
       <ToastContainer />
     </Box>
   )
