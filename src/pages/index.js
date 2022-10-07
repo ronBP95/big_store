@@ -98,13 +98,34 @@ const IndexPage = () => {
       {/* Grid Container */}
 
       {/* Image List Container */}
-      <Container>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "7em"}}>
+      <Container sx={{height: "100%", width: "100%"}}>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
           FOR ALL TYPES AND ALL STYLES
         </Box>
         <QuiltedImageList />
       </Container>
       {/* Image List Container */}
+
+      {/* Second Grid Container */}
+      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
+      <Typography>HOW IT WORKS</Typography>
+          <Item>
+            <Typography>1.</Typography>
+            <Typography>Icon</Typography>
+            <Typography>Desc</Typography>
+          </Item>
+          <Item>
+            <Typography>1.</Typography>
+            <Typography>Icon</Typography>
+            <Typography>Desc</Typography>
+          </Item>
+          <Item>
+            <Typography>1.</Typography>
+            <Typography>Icon</Typography>
+            <Typography>Desc</Typography>
+          </Item>
+      </Grid>
+      {/* Second Grid Container */}
 
       <ToastContainer />
     </Box>
