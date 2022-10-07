@@ -7,8 +7,9 @@ import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid'
-import Paper from '@mui/material/Paper'
+import Container from '@mui/material/Container'
 import { styled } from '@mui/material/styles';
+
 
 // Icon Imports
 import SouthIcon from '@mui/icons-material/South';
@@ -17,7 +18,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import KeyIcon from '@mui/icons-material/Key';
 
 // Component Imports
-import { HomeNav } from '../components/index'
+import { HomeNav, QuiltedImageList } from '../components/index'
 
 // Image Imports
 import storefront from '../images/storefront.jpg'
@@ -95,6 +96,16 @@ const IndexPage = () => {
         </Grid>
       </Grid>
       {/* Grid Container */}
+
+      {/* Image List Container */}
+      <Container>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "7em"}}>
+          FOR ALL TYPES AND ALL STYLES
+        </Box>
+        <QuiltedImageList />
+      </Container>
+      {/* Image List Container */}
+
       <ToastContainer />
     </Box>
   )
