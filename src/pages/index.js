@@ -12,18 +12,28 @@ import { styled } from '@mui/material/styles';
 
 // Icon Imports
 import SouthIcon from '@mui/icons-material/South';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import KeyIcon from '@mui/icons-material/Key';
 
 // Component Imports
 import { HomeNav } from '../components/index'
 
 // Image Imports
 import storefront from '../images/storefront.jpg'
+import steps from '../images/steps.jpg'
 
 // Grid Item
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
   textAlign: 'center',
+  background: "none",
+  fontSize: "16pt",
+  // border: '1px solid black',
   color: theme.palette.text.secondary,
   height: "50%"
 }));
@@ -55,15 +65,33 @@ const IndexPage = () => {
       {/* Hero Container */}
       
       {/* Grid Container */}
-      <Grid container spacing={2} sx={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: "100%", height: "100vh"}}>
-        <Grid item xs={4}>
-            <Item>Step 1</Item>
+      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "100vh", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
+        <Grid item xs={3}>
+          <Item>
+            <Box>
+              <WatchLaterIcon sx={{fontSize: "40pt"}}/>
+              <Typography variant="h6" sx={{marginTop: 1}}>FAST VIEWING EXPERIENCE</Typography>
+            </Box>
+            <Box sx={{textAlign: "left", marginTop: 4}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
+          </Item>
         </Grid>
-        <Grid item xs={4}>
-            <Item>Step 2</Item>
+        <Grid item xs={3}>
+          <Item>
+            <Box>
+              <ShoppingBagIcon sx={{fontSize: "40pt"}}/>
+              <Typography variant="h6" sx={{marginTop: 1}}>PRODUCT VARIETY</Typography>
+            </Box>
+            <Box sx={{textAlign: "left", marginTop: 4}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+          </Item>
         </Grid>
-        <Grid item xs={4}>
-            <Item>Step 3</Item>
+        <Grid item xs={3}>
+          <Item>
+            <Box>
+              <KeyIcon sx={{fontSize: "40pt"}}/>
+              <Typography variant="h6" sx={{marginTop: 1}}>EXCLUSIVE TO MEMBERS</Typography>
+            </Box>
+            <Box sx={{textAlign: "left", marginTop: 4}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+          </Item>
         </Grid>
       </Grid>
       {/* Grid Container */}
