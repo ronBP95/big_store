@@ -46,7 +46,7 @@ const IndexPage = () => {
       </Box>
       
       {/* Hero Container */}
-      <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "75%", backgroundImage: `url(${storefront})`, backgroundSize: "cover"}}>
+      <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "85%", backgroundImage: `url(${storefront})`, backgroundSize: "cover"}}>
         <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", height: "100%"}}>
           <Box alt="gutter"></Box>
           <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
@@ -59,57 +59,42 @@ const IndexPage = () => {
               <Typography sx={{color: "white"}}>Discover the experience</Typography>
             </Box>
           </Box>
-          <SouthIcon sx={{color: "white", paddingBottom: 3}} />
+          <SouthIcon sx={{color: "white", paddingBottom: 7}} />
         </Box>
       </Box>
       {/* Hero Container */}
       
       {/* Grid Container */}
-      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "100vh", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
+      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
         <Grid item xs={3}>
           <Item>
             <Box>
               <WatchLaterIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 1}}>FAST VIEWING EXPERIENCE</Typography>
+              <Typography variant="h6" sx={{marginTop: 4}}>FAST VIEWING EXPERIENCE</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
+            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
           </Item>
         </Grid>
         <Grid item xs={3}>
           <Item>
             <Box>
               <ShoppingBagIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 1}}>PRODUCT VARIETY</Typography>
+              <Typography variant="h6" sx={{marginTop: 4}}>PRODUCT VARIETY</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
           </Item>
         </Grid>
         <Grid item xs={3}>
           <Item>
             <Box>
               <KeyIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 1}}>EXCLUSIVE TO MEMBERS</Typography>
+              <Typography variant="h6" sx={{marginTop: 4}}>EXCLUSIVE TO MEMBERS</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
           </Item>
         </Grid>
       </Grid>
       {/* Grid Container */}
-
-      <Box className="homePage">
-        <Box className="landingImg"></Box>
-        <Box className="landingTxt">
-          <Box sx={{ width: 300 }}>
-            <Typography variant="h5" sx={{marginY: 1}}>Our Shop</Typography>
-            <Typography>BIG STORE shopping is an experience. One day the developer decided
-              that it was time to create a store that fit the needs of the people.
-              Instead of waiting around for a store to be built, the developer made
-              a fake one to represent the needs of the people.
-            </Typography>
-            <Button href="/shop" sx={{ paddingX: 0, paddingY: 1 }}>Shop Now</Button>
-          </Box>
-        </Box>
-      </Box>
       <ToastContainer />
     </Box>
   )
