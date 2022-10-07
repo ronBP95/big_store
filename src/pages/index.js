@@ -37,8 +37,23 @@ const Item = styled(Box)(({ theme }) => ({
   fontSize: "16pt",
   // border: '1px solid black',
   color: theme.palette.text.secondary,
-  height: "50%"
 }));
+
+const secondGrid = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "center",
+  background: `url(${steps})`,
+  backgroundSize: "cover",
+  height: "100%",
+  width: "100%",
+}
+
+const number = {
+  color: "pink",
+  fontSize: "24pt",
+}
 
 const IndexPage = () => {
   return (
@@ -108,26 +123,40 @@ const IndexPage = () => {
       {/* Image List Container */}
 
       {/* Second Grid Container */}
-      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
-      <Typography>HOW IT WORKS</Typography>
-          <Item>
-            <Typography>1.</Typography>
-            <Typography>Icon</Typography>
-            <Typography>Desc</Typography>
-          </Item>
-          <Item>
-            <Typography>1.</Typography>
-            <Typography>Icon</Typography>
-            <Typography>Desc</Typography>
-          </Item>
-          <Item>
-            <Typography>1.</Typography>
-            <Typography>Icon</Typography>
-            <Typography>Desc</Typography>
-          </Item>
-      </Grid>
+      <div style={secondGrid}>
+        <Typography variant="h3" sx={{paddingTop: 20}}>HOW IT WORKS</Typography>
+        <Grid container spacing={2} sx={{width: "75%"}}>
+          <Grid item xs={4}>
+            <Item>
+              <Box>
+                <Typography style={number}>1.</Typography>
+                <Typography variant="h6" sx={{marginTop: 4}}>FAST VIEWING EXPERIENCE</Typography>
+              </Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
+              <Box>
+                <Typography style={number}>2.</Typography>
+                <Typography variant="h6" sx={{marginTop: 4}}>PRODUCT VARIETY</Typography>
+              </Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
+              <Box>
+                <Typography style={number}>3.</Typography>
+                <Typography variant="h6" sx={{marginTop: 4}}>EXCLUSIVE TO MEMBERS</Typography>
+              </Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+            </Item>
+          </Grid>
+        </Grid>
+        <Button sx={{paddingBottom: 20}}>Start Now</Button>
+      </div>
       {/* Second Grid Container */}
-
       <ToastContainer />
     </Box>
   )
