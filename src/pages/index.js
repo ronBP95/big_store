@@ -33,6 +33,7 @@ const Item = styled(Box)(({ theme }) => ({
   alignItems: "center",
   textAlign: 'center',
   background: "none",
+  marginTop: 50,
   fontSize: "16pt",
   // border: '1px solid black',
   color: theme.palette.text.secondary,
@@ -99,8 +100,8 @@ const IndexPage = () => {
 
       {/* Image List Container */}
       <Container sx={{height: "100%", width: "100%"}}>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
-          FOR ALL TYPES AND ALL STYLES
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
+          <Typography>FOR ALL TYPES AND STYLES</Typography>
         </Box>
         <QuiltedImageList />
       </Container>
