@@ -33,9 +33,6 @@ const Checkout = () => {
     getCart();
   }, []);
 
-  console.log(cart)
-  console.log("Prices: ", total)
-
   return (
     <div>
       <CheckoutNav />

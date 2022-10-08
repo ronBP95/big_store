@@ -129,22 +129,6 @@ const addToCart = asyncHandler(async (req, res) => {
     }
 })
 
-// const removeFromCart = asyncHandler(async (req, res) => {
-//     const cart = await User.findOne(req.params.id)
-//     const object = cart.cart
-//     console.log(object)
-//     for (let i = 0; i < object.length; i++) {
-//         if (object[i] === req.body.product) {
-//             object.splice(i, 1)
-//         }
-//     }
-//     console.log(object)
-//     cart.save()
-//     res.status(200).json({
-//         message: 'Cart item deleted'
-//     })
-// })
-
 const removeFromCart = asyncHandler(async (req, res) => {
     const cart = await User.findById(req.user.id)
     const item = req.body.id
