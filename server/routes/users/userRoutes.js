@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, getMe, allUsers, deleteUser, viewCart, addToCart, removeFromCart } = require('../../controllers/userController.js')
+const { registerUser, loginUser, getMe, allUsers, deleteUser, viewCart, addToCart, removeFromCart, checkout, emptyCart } = require('../../controllers/userController.js')
 const { protect } = require('../../middleware/authMiddleware')
 
 // For debugging
@@ -16,5 +16,6 @@ router.delete('/:id', protect, deleteUser)
 router.get('/cart', protect, viewCart)
 router.post('/add', protect, addToCart)
 router.post('/remove', protect, removeFromCart)
+router.post('/checkout', protect, checkout)
 
 module.exports = router;

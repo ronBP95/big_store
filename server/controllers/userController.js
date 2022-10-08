@@ -104,11 +104,11 @@ const allUsers = asyncHandler(async (req, res) => {
 // Cart Functions
 
 const viewCart = asyncHandler(async (req, res) => {
-    const cart = await User.findById(req.user.id)
-    const array = cart.cart
-    console.log(array)
+    const userCart = await User.findById(req.user.id)
+    const cart = userCart.cart
+    console.log(cart)
     res.status(200).send({
-        array
+        cart
     })
 })
 
@@ -146,6 +146,20 @@ const removeFromCart = asyncHandler(async (req, res) => {
     })
 })
 
+const checkout = asyncHandler(async (req, res) => {
+    const userCart = await User.findById(req.user.id)
+    const cart = userCart.cart
+    console.log(cart)
+    res.status(200).send({
+        cart
+    })
+})
+
+const emptyCart = asyncHandler(async (req, res) => {
+
+})
+
+
 // Generate JWT
 const generateToken = (id) => {
     return jwt.sign({ id }, `${process.env.JWT_SECRET}`, {
@@ -162,4 +176,6 @@ module.exports = {
     viewCart,
     addToCart,
     removeFromCart,
+    checkout,
+    emptyCart,
 }
