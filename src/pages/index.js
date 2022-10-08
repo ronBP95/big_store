@@ -16,6 +16,9 @@ import SouthIcon from '@mui/icons-material/South';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import KeyIcon from '@mui/icons-material/Key';
+import LoginIcon from '@mui/icons-material/Login';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import MailIcon from '@mui/icons-material/Mail';
 
 // Component Imports
 import { HomeNav, QuiltedImageList, Footer } from '../components/index'
@@ -125,36 +128,36 @@ const IndexPage = () => {
       {/* Second Grid Container */}
       <div style={secondGrid}>
         <Typography variant="h3" sx={{paddingTop: 20}}>HOW IT WORKS</Typography>
-        <Grid container spacing={2} sx={{width: "75%"}}>
+        <Grid container spacing={2} sx={{width: "75%", paddingBottom: 7}}>
           <Grid item xs={4}>
             <Item>
               <Box>
                 <Typography style={number}>1.</Typography>
-                <Typography variant="h6" sx={{marginTop: 4}}>FAST VIEWING EXPERIENCE</Typography>
+                <LoginIcon sx={{marginTop: 4, fontSize: "64pt"}} />
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Sign up with your name, email, and a secure password you have never used before.</Box>
             </Item>
           </Grid>
           <Grid item xs={4}>
             <Item>
               <Box>
                 <Typography style={number}>2.</Typography>
-                <Typography variant="h6" sx={{marginTop: 4}}>PRODUCT VARIETY</Typography>
+                <LibraryAddIcon sx={{marginTop: 4, fontSize: "64pt"}} />
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Products are always in stock so feel free to add any products to your cart. Cart size is limited to 5 per purchase order.</Box>
             </Item>
           </Grid>
           <Grid item xs={4}>
             <Item>
               <Box>
                 <Typography style={number}>3.</Typography>
-                <Typography variant="h6" sx={{marginTop: 4}}>EXCLUSIVE TO MEMBERS</Typography>
+                <MailIcon sx={{marginTop: 4, fontSize: "64pt"}}/>
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Checkout with speed and with ease. You will receive an email receipt with your purchase order at the email address you used to sign in with.</Box>
             </Item>
           </Grid>
         </Grid>
-        <Button sx={{paddingBottom: 20}}>Start Now</Button>
+        <Button sx={{marginBottom: 20, height: "50px", width: "150px", background: "red", color: "white"}}>Start Now</Button>
       </div>
       {/* Second Grid Container */}
       <Footer />
