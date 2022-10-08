@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, getMe, allUsers, deleteUser, viewCart, addToCart, removeFromCart, checkout, emptyCart } = require('../../controllers/userController.js')
+const { registerUser, loginUser, getMe, allUsers, deleteUser, viewCart, addToCart, removeFromCart, checkout } = require('../../controllers/userController.js')
 const { protect } = require('../../middleware/authMiddleware')
 
 // For debugging
