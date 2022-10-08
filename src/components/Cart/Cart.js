@@ -8,7 +8,7 @@ const imageStyle = {
     height: "50px"
 }
 
-const Cart = (props, { handleOpen }) => {
+const Cart = (props) => {
 
 let token = localStorage.getItem('token')
 const [remove, setRemove] = React.useState({

@@ -3,6 +3,9 @@ import { Container, Box, Typography, Button, Paper } from '@mui/material';
 import CheckoutNav from '../components/CheckoutNav/CheckoutNav'
 import axios from 'axios'
 
+// Component Imports
+import OrderSummary from '../components/OrderSummary/OrderSummary';
+
 const Checkout = () => {
 
   const [cart, setCart]= React.useState([])
@@ -16,9 +19,15 @@ const Checkout = () => {
     })
     .then(function (response) {
       let filter = response.data.array
-      setCart(filter.map((cartItem, index) => <div cartItem={cartItem} key={index} number={index}></div>))
+      setCart(filter.map((cartItem, index) => <OrderSummary cartItem={cartItem} key={index} number={index} />))
     })
   }
+
+  React.useEffect(() => {
+    getCart();
+  }, []);
+
+  console.log(cart)
 
   return (
     <div>
@@ -32,7 +41,7 @@ const Checkout = () => {
             <Typography sx={{padding: 2}}>Order Summary</Typography>
           </Box>
           <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 2, paddingRight: 3}}>
-              <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
+              <Box sx={{display:"flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
                 <Typography>Products</Typography>
                 <Typography>{cart}</Typography>
               </Box>

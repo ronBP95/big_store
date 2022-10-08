@@ -15,7 +15,7 @@ const CheckoutNav = () => {
             >
                 <Toolbar>
                 <Typography variant="h6" color="inherit" noWrap>
-                    Company name
+                    Big storefront
                 </Typography>
                 </Toolbar>
             </AppBar>
