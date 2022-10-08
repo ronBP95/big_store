@@ -152,17 +152,14 @@ const checkout = asyncHandler(async (req, res) => {
     let orderHistory = user.orderHistory
     let cart = user.cart
     orderHistory.push(cart)
+    cart.splice(0, 5)
     user.save()
     res.status(200).json({
-        message: "Checked Out",
+        message: "Checked Out and Cart Emptied",
         orderHistory,
+        cart,
     })
 })
-
-const emptyCart = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user.id)
-})
-
 
 // Generate JWT
 const generateToken = (id) => {
