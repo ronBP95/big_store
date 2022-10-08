@@ -9,6 +9,7 @@ import OrderSummary from '../components/OrderSummary/OrderSummary';
 const Checkout = () => {
 
   const [cart, setCart]= React.useState([])
+  const [total, setTotal] = React.useState([])
   let token = localStorage.getItem('token')
 
   const getCart = () => {
@@ -19,7 +20,12 @@ const Checkout = () => {
     })
     .then(function (response) {
       let filter = response.data.array
+      console.log("Filter", filter)
       setCart(filter.map((cartItem, index) => <OrderSummary cartItem={cartItem} key={index} number={index} />))
+      let prices = filter.map((cartItem) => cartItem.price)
+      const initialValue = 0;
+      const sum = prices.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue)
+      setTotal(Math.round(sum * 100) / 100)
     })
   }
 
@@ -28,6 +34,7 @@ const Checkout = () => {
   }, []);
 
   console.log(cart)
+  console.log("Prices: ", total)
 
   return (
     <div>
@@ -51,7 +58,7 @@ const Checkout = () => {
               </Box>
               <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
                 <Typography>Total</Typography>
-                <Typography>$Price Function to add all</Typography>
+                <Typography>{total}</Typography>
               </Box>
           </Box>
           <Box sx={{display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%"}}>
