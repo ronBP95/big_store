@@ -148,16 +148,19 @@ const removeFromCart = asyncHandler(async (req, res) => {
 })
 
 const checkout = asyncHandler(async (req, res) => {
-    const userCart = await User.findById(req.user.id)
-    const cart = userCart.cart
-    console.log(cart)
-    res.status(200).send({
-        cart
+    const user = await User.findById(req.user.id)
+    let orderHistory = user.orderHistory
+    let cart = user.cart
+    orderHistory.push(cart)
+    user.save()
+    res.status(200).json({
+        message: "Checked Out",
+        orderHistory,
     })
 })
 
 const emptyCart = asyncHandler(async (req, res) => {
-
+    const user = await User.findById(req.user.id)
 })
 
 
