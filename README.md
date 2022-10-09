@@ -27,6 +27,6 @@ A modal was built out using React with Material-UI and maps out the cart propert
 
 Checkout takes the price of all of the items and empties out the cart.
 
-### Email / Analyitics (Planned Features)
+### Email / Analyitics / Refinement (Planned Features)
 
-The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials. Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present.
+The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials. Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present. The "Minimum Viable Project" has been completed and a refinement project is currently underway. I am working on fonts, responsiveness pages, fixing react-toastify triggers, and many other visual improvements.
