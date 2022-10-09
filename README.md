@@ -25,12 +25,8 @@ A modal was built out using React with Material-UI and maps out the cart propert
 
 ### Checkout
 
-This feature is being built out to map out the cart items and add up the price of the items listed in the cart.
+Checkout takes the price of all of the items and empties out the cart.
 
-### Email
+### Email / Analyitics (Planned Features)
 
-The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials.
-
-### Analytics
-
-Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present.
+The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials. Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present.
