@@ -33,15 +33,16 @@ const Profile = () => {
             setName(res.data.name)
             setEmail(res.data.email)
             let filter = res.data.orderHistory
-            console.log(filter)
-            // setOrderHistory(filter.map((orderHistory) => orderHistory.title))
-            // setOrderPrice(filter.map((orderHistory) => orderHistory.price))
+            console.log("Filter", filter)
+            setOrderHistory(filter)
         })
     }
 
     React.useEffect(() => {
         getProfile();
     }, []);
+
+    const [total, setTotal] = React.useState("")
 
     console.log("Orders ", orderHistory)
 
@@ -60,13 +61,32 @@ const Profile = () => {
                         Email: {email}
                     </Box>
                 </Box>
-                <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
+                <Box sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
                     <Typography variant="h6">Order History</Typography>
-                    <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-                        <Typography>{orderHistory}</Typography>
-                        <Typography>{orderPrice}</Typography>
+                    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", marginTop: 2}}>
+                        {orderHistory.map((orders, index) => {
+                            let initialValue = 0;
+                            return (
+                                <Paper key={index} sx={{width: "100%", marginTop: 2}}>
+                                    <h2>Order #{index + 1}</h2>
+                                    {orders.map((items, index) => {
+                                        initialValue += items.price
+                                        return (
+                                            <Box>
+                                                <Box key={index} sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%"}}>
+                                                <h4>{items.title}</h4>
+                                                <p>{items.price}</p>
+                                                </Box>
+                                            </Box>
+                                        )
+                                    })}
+                                    <Typography sx={{display: "flex", flexDirection: "row", justifyContent: "flex-end", width: "100%"}}>Total: {initialValue}</Typography>
+                                </Paper>
+                            )
+                        })}
+
                     </Box>
-                </Paper>
+                </Box>
             </Container>
         </div>
     );

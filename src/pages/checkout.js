@@ -6,6 +6,7 @@ import axios from 'axios'
 // Component Imports
 import OrderSummary from '../components/OrderSummary/OrderSummary';
 import { toast } from 'react-toastify';
+import { navigate } from 'gatsby';
 
 const Checkout = () => {
 
@@ -45,6 +46,7 @@ const Checkout = () => {
     })
     .then(function (response) {
       console.log(response)
+      navigate('/profile')
       toast("Checked Out Successfully")
     })
     .catch(function (res) {
