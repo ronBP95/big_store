@@ -13,7 +13,7 @@
     "start": "concurrently \"npm run server\" \"gatsby serve\"",
     "server": "nodemon server/server.js",
     "build": "gatsby build",
-    "serve": "gatsby serve",
+    "serve": "concurrently \"npm run server\" \"gatsby serve\"",
     "clean": "gatsby clean",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
