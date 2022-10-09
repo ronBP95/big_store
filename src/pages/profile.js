@@ -18,7 +18,6 @@ const Profile = () => {
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [orderHistory, setOrderHistory] = React.useState([])
-    const [orderPrice, setOrderPrice] = React.useState([])
 
     const getProfile = async () => {
         await axios({
@@ -41,8 +40,6 @@ const Profile = () => {
     React.useEffect(() => {
         getProfile();
     }, []);
-
-    const [total, setTotal] = React.useState("")
 
     console.log("Orders ", orderHistory)
 

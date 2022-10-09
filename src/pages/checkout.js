@@ -12,7 +12,10 @@ const Checkout = () => {
 
   const [cart, setCart]= React.useState([])
   const [total, setTotal] = React.useState([])
-  let token = localStorage.getItem('token')
+  
+  React.useEffect(() => {
+    const token = localStorage.getItem('token')
+  }, []);
 
   const getCart = () => {
     axios.get('http://localhost:4000/api/users/cart', {

@@ -157,7 +157,7 @@ const IndexPage = () => {
             </Item>
           </Grid>
         </Grid>
-        <Button sx={{marginBottom: 20, height: "50px", width: "150px", background: "red", color: "white"}}>Start Now</Button>
+        <Button href='/register' sx={{marginBottom: 20, height: "50px", width: "150px", background: "red", color: "white"}}>Start Now</Button>
       </div>
       {/* Second Grid Container */}
       <Footer />
