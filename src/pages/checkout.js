@@ -5,6 +5,7 @@ import axios from 'axios'
 
 // Component Imports
 import OrderSummary from '../components/OrderSummary/OrderSummary';
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
 
@@ -33,6 +34,25 @@ const Checkout = () => {
     getCart();
   }, []);
 
+  const checkout = async (e) => {
+    e.preventDefault()
+    await axios({
+      method: "post",
+      url: "http://localhost:4000/api/users/checkout",
+      headers: {
+          Authorization: 'Bearer ' + token
+      }
+    })
+    .then(function (response) {
+      console.log(response)
+      toast("Checked Out Successfully")
+    })
+    .catch(function (res) {
+      console.log(res)
+      toast("Something went wrong")
+    })
+  }
+
   return (
     <div>
       <CheckoutNav />
@@ -59,7 +79,7 @@ const Checkout = () => {
               </Box>
           </Box>
           <Box sx={{display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%"}}>
-            <Button sx={{margin: 2, marginBottom: 0}}>Place Order</Button>
+            <Button sx={{margin: 2, marginBottom: 0}} onClick={checkout}>Place Order</Button>
           </Box>
         </Box>
       </Container>

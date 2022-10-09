@@ -147,18 +147,19 @@ const removeFromCart = asyncHandler(async (req, res) => {
     })
 })
 
+// Empty Cart Callback
+
 const checkout = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user.id)
+    const cartUpdate = await User.findByIdAndUpdate(req.user.id)
     let orderHistory = user.orderHistory
-    let cart = user.cart[0]
     let allCart = user.cart
-    console.log("Cart", cart)
-    if (cart === undefined) {
-        message = "Cart is Empty"
+    if (allCart.length === 0) {
+        message = "Cart is empty. Go fill your cart!"
     } else {
-        orderHistory.push(cart)
-        allCart.splice(0, 1)
-        message = "Order History was pushed and Cart was emptied"
+        orderHistory.push(allCart)
+        user.cart = []
+        message = "Checked out and emptied cart"
     }
     user.save()
     res.status(200).json({

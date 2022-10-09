@@ -18,6 +18,7 @@ const Profile = () => {
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [orderHistory, setOrderHistory] = React.useState([])
+    const [orderPrice, setOrderPrice] = React.useState([])
 
     const getProfile = async () => {
         await axios({
@@ -32,8 +33,9 @@ const Profile = () => {
             setName(res.data.name)
             setEmail(res.data.email)
             let filter = res.data.orderHistory
-            console.log("Filter", filter)
-            setOrderHistory(filter.map((x) => x))
+            console.log(filter)
+            // setOrderHistory(filter.map((orderHistory) => orderHistory.title))
+            // setOrderPrice(filter.map((orderHistory) => orderHistory.price))
         })
     }
 
@@ -59,7 +61,11 @@ const Profile = () => {
                     </Box>
                 </Box>
                 <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
-                    <Typography>{orderHistory.price}</Typography>
+                    <Typography variant="h6">Order History</Typography>
+                    <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <Typography>{orderHistory}</Typography>
+                        <Typography>{orderPrice}</Typography>
+                    </Box>
                 </Paper>
             </Container>
         </div>
