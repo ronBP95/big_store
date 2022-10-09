@@ -33,8 +33,7 @@ const Profile = () => {
             setEmail(res.data.email)
             let filter = res.data.orderHistory
             console.log("Filter", filter)
-            setOrderHistory(filter.map(x => orderHistory.push(x)))
-            console.log("orderhistory", orderHistory)
+            setOrderHistory(filter.map((x) => x))
         })
     }
 
@@ -42,7 +41,7 @@ const Profile = () => {
         getProfile();
     }, []);
 
-    console.log(orderHistory)
+    console.log("Orders ", orderHistory)
 
     return (
         <div>
@@ -60,7 +59,7 @@ const Profile = () => {
                     </Box>
                 </Box>
                 <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
-                    <Typography>Title: {orderHistory.title}</Typography>
+                    <Typography>{orderHistory.price}</Typography>
                 </Paper>
             </Container>
         </div>
