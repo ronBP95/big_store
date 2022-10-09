@@ -150,14 +150,20 @@ const removeFromCart = asyncHandler(async (req, res) => {
 const checkout = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user.id)
     let orderHistory = user.orderHistory
-    let cart = user.cart
-    orderHistory.push(cart)
-    cart.splice(0, 5)
+    let cart = user.cart[0]
+    let allCart = user.cart
+    console.log("Cart", cart)
+    if (cart === undefined) {
+        message = "Cart is Empty"
+    } else {
+        orderHistory.push(cart)
+        allCart.splice(0, 1)
+        message = "Order History was pushed and Cart was emptied"
+    }
     user.save()
     res.status(200).json({
-        message: "Checked Out and Cart Emptied",
+        message,
         orderHistory,
-        cart,
     })
 })
 

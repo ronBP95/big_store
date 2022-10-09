@@ -19,7 +19,7 @@ const Checkout = () => {
       }
     })
     .then(function (response) {
-      let filter = response.data.array
+      let filter = response.data.cart
       console.log("Filter", filter)
       setCart(filter.map((cartItem, index) => <OrderSummary cartItem={cartItem} key={index} number={index} />))
       let prices = filter.map((cartItem) => cartItem.price)

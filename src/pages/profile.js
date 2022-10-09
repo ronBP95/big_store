@@ -6,6 +6,7 @@ import axios from 'axios'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Container from '@mui/material/Container'
+import { Typography } from '@mui/material';
 import Button from '@mui/material/Button'
 import { navigate } from 'gatsby';
 import { toast } from 'react-toastify'
@@ -16,8 +17,9 @@ const Profile = () => {
 
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
+    const [orderHistory, setOrderHistory] = React.useState([])
 
-    const getMe = async () => {
+    const getProfile = async () => {
         await axios({
             method: "get",
             url: "http://localhost:4000/api/users/me",
@@ -29,14 +31,18 @@ const Profile = () => {
             console.log(res)
             setName(res.data.name)
             setEmail(res.data.email)
+            let filter = res.data.orderHistory
+            console.log("Filter", filter)
+            setOrderHistory(filter.map(x => orderHistory.push(x)))
+            console.log("orderhistory", orderHistory)
         })
     }
 
     React.useEffect(() => {
-        getMe();
+        getProfile();
     }, []);
 
-    console.log("Name: ", name)
+    console.log(orderHistory)
 
     return (
         <div>
@@ -54,7 +60,7 @@ const Profile = () => {
                     </Box>
                 </Box>
                 <Paper sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
-                    Order History:
+                    <Typography>Title: {orderHistory.title}</Typography>
                 </Paper>
             </Container>
         </div>
