@@ -1,6 +1,6 @@
 # Welcome to the Big Store!
 
-Live View: "Not deployed at this time"
+Live View: <a>https://bigstore.gatsbyjs.io/</a>
 
 ### Features
 
