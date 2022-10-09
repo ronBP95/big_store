@@ -81,9 +81,9 @@ const Nav = () => {
   // Cart GET Request
 
   const [cart, setCart] = React.useState([])
-  let token = localStorage.getItem('token')
 
   const getCart = () => {
+      let token = localStorage.getItem('token')
       axios.get('http://localhost:4000/api/users/cart', {
         headers: {
           'Authorization': 'Bearer ' + token

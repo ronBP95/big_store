@@ -13,13 +13,12 @@ import { toast } from 'react-toastify'
 
 const Profile = () => {
 
-    let token = localStorage.getItem('token')
-
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [orderHistory, setOrderHistory] = React.useState([])
 
     const getProfile = async () => {
+        let token = localStorage.getItem('token')
         await axios({
             method: "get",
             url: "http://localhost:4000/api/users/me",

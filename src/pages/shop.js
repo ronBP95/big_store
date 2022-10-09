@@ -14,39 +14,39 @@ const Shop = () => {
 
     const getProducts = () => {
         axios.get('https://fakestoreapi.com/products')
-        .then(function (response) {
-            setProducts(response.data)
-        })
+            .then(function (response) {
+                setProducts(response.data)
+            })
     }
 
     useEffect(() => {
         try {
             getProducts();
-        } catch(error) {
+        } catch (error) {
             console.error();
         }
     }, []);
 
-    let token = localStorage.getItem('token')
-    const [isAuth, setIsAuth] = useState(false)
-    
-    useEffect(() => {
-        if (token !== null) {
-            setIsAuth(true)
-        } else if (token === null) {
-            setIsAuth(false)
-        }
-    })
+    // let token = localStorage.getItem('token')
+    // const [isAuth, setIsAuth] = useState(false)
 
-    console.log(localStorage)
+    // useEffect(() => {
+    //     if (token !== null) {
+    //         setIsAuth(true)
+    //     } else if (token === null) {
+    //         setIsAuth(false)
+    //     }
+    // })
+
+    // console.log(localStorage)
     return (
         <div>
             <Nav />
-            <Container maxWidth="xl" sx={{marginY: 5}}>
+            <Container maxWidth="xl" sx={{ marginY: 5 }}>
                 <Grid container spacing={5}>
-                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index}/>)}
+                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index} />)}
                 </Grid>
-            <ToastContainer />
+                <ToastContainer />
             </Container>
         </div>
     );

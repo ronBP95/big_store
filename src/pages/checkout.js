@@ -12,12 +12,9 @@ const Checkout = () => {
 
   const [cart, setCart]= React.useState([])
   const [total, setTotal] = React.useState([])
-  
-  React.useEffect(() => {
-    const token = localStorage.getItem('token')
-  }, []);
 
   const getCart = () => {
+    const token = localStorage.getItem('token')
     axios.get('http://localhost:4000/api/users/cart', {
       headers: {
         'Authorization': 'Bearer ' + token
@@ -40,6 +37,7 @@ const Checkout = () => {
 
   const checkout = async (e) => {
     e.preventDefault()
+    const token = localStorage.getItem('token')
     await axios({
       method: "post",
       url: "http://localhost:4000/api/users/checkout",
