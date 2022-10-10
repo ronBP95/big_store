@@ -38,7 +38,7 @@ export default function Login() {
     e.preventDefault();
     await axios({
       method: "post",
-      url: "http://localhost:4000/api/users/login",
+      url: "https://big-store-backend.glitch.me/api/users/login",
       data: formData,
     })
     .then(res => {

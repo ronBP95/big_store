@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run start",
+    "start": "gatsby develop",
     "server": "nodemon server/server.js",
     "build": "gatsby build",
     "serve": "gatsby serve",

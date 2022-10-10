@@ -20,7 +20,7 @@ console.log('Checking key', props.number)
 console.log('All props: ', props.cartItem)
 await axios({
     method: "post",
-    url: "http://localhost:4000/api/users/remove",
+    url: "https://big-store-backend.glitch.me/api/users/remove",
     data: remove,
     headers: {
     Authorization: 'Bearer ' + token

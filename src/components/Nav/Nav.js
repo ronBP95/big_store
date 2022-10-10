@@ -84,7 +84,7 @@ const Nav = () => {
 
   const getCart = () => {
       let token = localStorage.getItem('token')
-      axios.get('http://localhost:4000/api/users/cart', {
+      axios.get('https://big-store-backend.glitch.me/api/users/cart', {
         headers: {
           'Authorization': 'Bearer ' + token
         }

@@ -20,7 +20,7 @@ const ShopCard = (props) => {
         e.preventDefault();
         await axios({
             method: "post",
-            url: "http://localhost:4000/api/users/add",
+            url: "https://big-store-backend.glitch.me/api/users/add",
             data: itemInfo,
             headers: {
                 Authorization: 'Bearer ' + token
