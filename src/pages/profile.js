@@ -21,7 +21,7 @@ const Profile = () => {
         let token = localStorage.getItem('token')
         await axios({
             method: "get",
-            url: "http://localhost:4000/api/users/me",
+            url: "https://big-store-backend.glitch.me/api/users/me",
             headers: {
                 Authorization: 'Bearer ' + token
             }

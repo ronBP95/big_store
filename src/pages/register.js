@@ -38,7 +38,7 @@ export default function Register() {
     e.preventDefault()
     await axios({
       method: "post",
-      url: "http://localhost:4000/api/users/register",
+      url: "https://big-store-backend.glitch.me/api/users/register",
       data: formData,
     })
     .then(function (res) {
@@ -71,7 +71,7 @@ export default function Register() {
   const firstLogin = async () => {
     await axios({
         method: "post",
-        url: "http://localhost:4000/api/users/login",
+        url: "https://big-store-backend.glitch.me/api/users/login",
         data: formData,
     })
     .then(res => {

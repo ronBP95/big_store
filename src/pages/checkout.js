@@ -15,7 +15,7 @@ const Checkout = () => {
 
   const getCart = () => {
     const token = localStorage.getItem('token')
-    axios.get('http://localhost:4000/api/users/cart', {
+    axios.get('https://big-store-backend.glitch.me/api/users/cart', {
       headers: {
         'Authorization': 'Bearer ' + token
       }
@@ -40,7 +40,7 @@ const Checkout = () => {
     const token = localStorage.getItem('token')
     await axios({
       method: "post",
-      url: "http://localhost:4000/api/users/checkout",
+      url: "https://big-store-backend.glitch.me/api/users/checkout",
       headers: {
           Authorization: 'Bearer ' + token
       }
