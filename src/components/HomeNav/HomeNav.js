@@ -16,7 +16,7 @@ export default function HomeNav() {
       xs: 0,
       sm: 0
     }}}>
-      <AppBar position="static" sx={{backgroundColor: "#444444", minWidth: 375, minHeight: 64}}>
+      <AppBar position="static" sx={{backgroundColor: "#28282a", minWidth: 375, minHeight: 64}}>
         <Toolbar sx= {{display: 'flex', justifyContent: 'space-between'}}>
             <Box 
             sx= {{ 
