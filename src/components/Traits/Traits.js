@@ -23,7 +23,7 @@ const Item = styled(Box)(({ theme }) => ({
     fontSize: "16pt",
     // border: '1px solid black',
     color: theme.palette.text.secondary,
-  }));
+}));
 
 const Traits = () => {
     return (
