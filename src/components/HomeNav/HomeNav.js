@@ -12,8 +12,11 @@ import '../../pages/index.css'
 
 export default function HomeNav() {
   return (
-    <Box sx={{ flexGrow: 1, height: "7.4%"}}>
-      <AppBar position="static" sx={{backgroundColor: "#444444", minHeight: 60, minWidth: 375, padding: 0 }}>
+    <Box sx={{ height: "6.9%", padding: {
+      xs: 0,
+      sm: 0
+    } }}>
+      <AppBar position="static" sx={{backgroundColor: "#444444", minWidth: 375, minHeight: 64}}>
         <Toolbar sx= {{display: 'flex', justifyContent: 'space-between'}}>
             <Box 
             sx= {{ 
@@ -22,12 +25,16 @@ export default function HomeNav() {
               xs: "none", // 0
               sm: "inline", // 600
             }}}/>
-                <Typography variant="h6" component="div" sx={{fontFamily: "Inter"}}>
+                <Typography variant="h6" component="div" sx={{fontFamily: "Inter", padding: {
+                  xs: 2,
+                  sm: 0
+                }
+                }}>
                     BIG STORE
                 </Typography>
             <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
                 <Button color="inherit" href='/login' sx={{fontFamily: "Open Sans"}}>Login</Button>
-                <Button sx={{ color: '#ff3366', paddingRight: 2, marginLeft: 2, fontFamily: "Open Sans"}} href='/register'>Register</Button>
+                <Button sx={{ color: '#ff3366', paddingRight:{xs: 0, sm: 2}, marginLeft:  {xs: 1, sm: 2}, fontFamily: "Open Sans"}} href='/register'>Register</Button>
             </Box>
         </Toolbar>
       </AppBar>
