@@ -12,7 +12,6 @@ import { styled } from '@mui/material/styles';
 
 
 // Icon Imports
-import SouthIcon from '@mui/icons-material/South';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import KeyIcon from '@mui/icons-material/Key';
@@ -21,10 +20,9 @@ import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 import MailIcon from '@mui/icons-material/Mail';
 
 // Component Imports
-import { HomeNav, QuiltedImageList, Footer } from '../components/index'
+import { HomeNav, Hero, QuiltedImageList, Footer } from '../components/index'
 
 // Image Imports
-import storefront from '../images/storefront.jpg'
 import store from '../images/store.webp'
 import steps from '../images/steps.jpg'
 
@@ -66,26 +64,7 @@ const IndexPage = () => {
       <Box className="nav">
         <HomeNav sx={{ height: "7.4%", minHeight: 60 }} />
       </Box>
-      
-      {/* Hero Container */}
-      <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "85%", backgroundImage: `url(${storefront})`, backgroundSize: "cover"}}>
-        <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", height: "100%"}}>
-          <Box alt="gutter"></Box>
-          <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <Typography variant="h4" sx={{color: "white", fontSize: "27pt"}}>UPGRADE YOUR SHOPPING</Typography>
-            <Box sx={{marginTop: 10, textAlign: "center"}}>
-              <Typography sx={{color: "white"}}>Enjoy new products available only to members</Typography>
-              <Button href="/register" variant="contained" sx={{marginTop: 3, marginBottom: 2, background: "#ff3366", height: "70px", width: "200px", "&.MuiButtonBase-root:hover": {
-                bgcolor: "red"
-              }}}>Register</Button>
-              <Typography sx={{color: "white"}}>Discover the experience</Typography>
-            </Box>
-          </Box>
-          <SouthIcon sx={{color: "white", paddingBottom: 7}} />
-        </Box>
-      </Box>
-      {/* Hero Container */}
-      
+      <Hero />
       {/* Grid Container */}
       <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
         <Grid item xs={3}>
