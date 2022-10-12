@@ -27,7 +27,7 @@ const Item = styled(Box)(({ theme }) => ({
 
 const Traits = () => {
     return (
-        <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
+        <Grid container sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
         <Grid item xs={3}>
           <Item>
             <Box>

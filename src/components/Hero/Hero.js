@@ -14,7 +14,7 @@ import '../../pages/index.css'
 
 const Hero = () => {
     return (
-    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "85%", minHeight: "600px", backgroundImage: `url(${storefront})`, backgroundSize: "cover"}}>
+    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: {xs: "95%", sm: "85%"}, minHeight: "600px", backgroundImage: `url(${storefront})`, backgroundSize: "cover"}}>
         <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", height: "100%"}}>
             <Box alt="gutter"></Box>
             <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>

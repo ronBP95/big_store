@@ -12,7 +12,7 @@ import '../../pages/index.css'
 
 export default function HomeNav() {
   return (
-    <Box sx={{ height: "6.9%", minHeight: 64, padding: {
+    <Box sx={{ height: "auto", minHeight: 64, padding: {
       xs: 0,
       sm: 0
     }}}>
