@@ -12,19 +12,17 @@ import { styled } from '@mui/material/styles';
 
 
 // Icon Imports
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import KeyIcon from '@mui/icons-material/Key';
+
+
 import LoginIcon from '@mui/icons-material/Login';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 import MailIcon from '@mui/icons-material/Mail';
 
 // Component Imports
-import { HomeNav, Hero, QuiltedImageList, Footer } from '../components/index'
+import { HomeNav, Hero, Traits, QuiltedImageList, Footer } from '../components/index'
 
 // Image Imports
 import store from '../images/store.webp'
-import steps from '../images/steps.jpg'
 
 // Grid Item
 const Item = styled(Box)(({ theme }) => ({
@@ -65,38 +63,7 @@ const IndexPage = () => {
         <HomeNav sx={{ height: "7.4%", minHeight: 60 }} />
       </Box>
       <Hero />
-      {/* Grid Container */}
-      <Grid container spacing={3} sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
-        <Grid item xs={3}>
-          <Item>
-            <Box>
-              <WatchLaterIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>FAST VIEWING EXPERIENCE</Typography>
-            </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Box>
-              <ShoppingBagIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>PRODUCT VARIETY</Typography>
-            </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Box>
-              <KeyIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>EXCLUSIVE TO MEMBERS</Typography>
-            </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
-          </Item>
-        </Grid>
-      </Grid>
-      {/* Grid Container */}
-
+      <Traits />
       {/* Image List Container */}
       <Container sx={{height: "100%", width: "100%"}}>
         <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
