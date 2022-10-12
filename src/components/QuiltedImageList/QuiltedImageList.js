@@ -5,6 +5,9 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
+// Font Imports
+import '../../pages/index.css'
+
 function srcset(image, size, rows = 1, cols = 1) {
   return {
     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
@@ -16,12 +19,13 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 export default function QuiltedImageList() {
   return (
-    <Container sx={{height: "100%", width: "100%"}}>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
-          <Typography>FOR ALL TYPES AND STYLES</Typography>
+    <Container sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "auto", width: "100%", paddingBottom: 5}}>
+        <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
+          <Typography sx={{fontFamily: "Inter", fontSize: "24pt", textAlign: "center"}}>FOR ALL TYPES AND STYLES</Typography>
+          <Box sx={{width: "15%", marginTop: 2, borderBottom: "3px solid #ff3366"}}></Box>
         </Box>
       <ImageList
-        sx={{ width: "100%", height: "81%" }}
+        sx={{ width: "100%", height: "81%", maxWidth: "900px" }}
         variant="quilted"
         cols={4}
         rowHeight={121}

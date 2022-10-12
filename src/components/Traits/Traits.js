@@ -10,6 +10,9 @@ import KeyIcon from '@mui/icons-material/Key';
 import steps from '../../images/steps.jpg'
 import { styled } from '@mui/material/styles';
 
+// Font Imports
+import '../../pages/index.css'
+
 // Grid Item
 const Item = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,7 +22,7 @@ const Item = styled(Box)(({ theme }) => ({
     alignItems: "center",
     textAlign: 'center',
     background: "none",
-    marginTop: 50,
+    marginTop: {xs: 50, sm: 50, md: 0},
     fontSize: "16pt",
     // border: '1px solid black',
     color: theme.palette.text.secondary,
@@ -27,32 +30,32 @@ const Item = styled(Box)(({ theme }) => ({
 
 const Traits = () => {
     return (
-        <Grid container sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", height: "45rem", paddingTop: 10, background: `url(${steps})`, backgroundSize: "cover"}}>
-        <Grid item xs={3}>
+        <Grid container rowSpacing={4} sx={{display: "flex", flexDirection: {xs: "column", sm: "column", md: "row "}, justifyContent: "center", alignItems: "center", width: "100%", height: {sm: "auto", md: "45rem"}, paddingTop: {xs: 10, sm: 10, md: 0}, paddingBottom: {xs: 10, sm: 10, md: 0}, background: `url(${steps})`, backgroundSize: "cover"}}>
+        <Grid item xs={9} md={3}>
           <Item>
             <Box>
-              <WatchLaterIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>FAST VIEWING EXPERIENCE</Typography>
+              <WatchLaterIcon sx={{fontSize: "40pt", color: "black"}}/>
+              <Typography variant="h6" sx={{marginTop: 4, fontFamily: "Inter Bold", color: "black", maxWidth: "191px"}}>FAST VIEWING EXPERIENCE</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
+            <Box sx={{textAlign: "center", marginTop: 4, width: {sm: "95%", md: "85%"}, height: "100%", maxHeight: {xs: "none", sm: "none", md: "215px"}, fontFamily: "Open Sans"}}>Shop with ease and speed. Page load times have been optimized to help you view your product faster!</Box>
           </Item>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={9} md={3}>
           <Item>
             <Box>
-              <ShoppingBagIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>PRODUCT VARIETY</Typography>
+              <KeyIcon sx={{fontSize: "40pt", color: "black"}}/>
+              <Typography variant="h6" sx={{marginTop: 4, fontFamily: "Inter Bold", color: "black", maxWidth: "191px"}}>EXCLUSIVE TO MEMBERS</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "180px"}, fontFamily: "Open Sans"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
           </Item>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={9} md={3}>
           <Item>
             <Box>
-              <KeyIcon sx={{fontSize: "40pt"}}/>
-              <Typography variant="h6" sx={{marginTop: 4}}>EXCLUSIVE TO MEMBERS</Typography>
+              <ShoppingBagIcon sx={{fontSize: "40pt", color: "black"}}/>
+              <Typography variant="h6" sx={{marginTop: 4, fontFamily: "Inter Bold", color: "black", maxWidth: "191px"}}>PRODUCT VARIETY</Typography>
             </Box>
-            <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "215px"}, fontFamily: "Open Sans"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
           </Item>
         </Grid>
       </Grid>

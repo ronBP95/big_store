@@ -18,6 +18,11 @@ body {
 }
 
 @font-face {
+    font-family: "Inter Bold";
+    src: url(../fonts/Inter-ExtraBold.ttf)
+}
+
+@font-face {
     font-family: "Open Sans";
     src: url(../fonts/OpenSans-Regular.ttf);
 }
