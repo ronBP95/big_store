@@ -21,11 +21,11 @@ const Hero = () => {
                 <Typography variant="h4" sx={{color: "white", fontSize: "27pt", fontFamily: "Inter", textAlign: "center"}}>UPGRADE YOUR SHOPPING</Typography>
                 <Box sx={{width: "35%", marginTop: 2, borderBottom: "3px solid #ff3366"}}></Box>
                 <Box sx={{marginTop: 10, textAlign: "center"}}>
-                    <Typography sx={{color: "white", fontFamily: "Inter"}}>Enjoy new products available only to members</Typography>
+                    <Typography sx={{color: "white", fontFamily: "Inter"}}>Enjoy up to 70% off of new products available only to members</Typography>
                     <Button href="/register" variant="contained" sx={{marginTop: 3, marginBottom: 2, background: "#ff3366", height: "50px", width: "150px", "&.MuiButtonBase-root:hover": {
                     bgcolor: "red"
                     }}}>Register</Button>
-                    <Typography sx={{color: "white", fontFamily: "Inter"}}>Discover the experience</Typography>
+                    <Typography sx={{color: "white", fontFamily: "Inter", fontSize: "10pt"}}>Discover the experience</Typography>
                 </Box>
             </Box>
             <SouthIcon sx={{color: "white", paddingBottom: 7}} />
