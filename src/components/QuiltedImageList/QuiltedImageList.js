@@ -1,6 +1,9 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -13,22 +16,27 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 export default function QuiltedImageList() {
   return (
-    <ImageList
-      sx={{ width: "100%", height: "81%" }}
-      variant="quilted"
-      cols={4}
-      rowHeight={121}
-    >
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-          <img
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <Container sx={{height: "100%", width: "100%"}}>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
+          <Typography>FOR ALL TYPES AND STYLES</Typography>
+        </Box>
+      <ImageList
+        sx={{ width: "100%", height: "81%" }}
+        variant="quilted"
+        cols={4}
+        rowHeight={121}
+      >
+        {itemData.map((item) => (
+          <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+            <img
+              {...srcset(item.img, 121, item.rows, item.cols)}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </Container>
   );
 }
 

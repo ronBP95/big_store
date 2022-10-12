@@ -64,15 +64,7 @@ const IndexPage = () => {
       </Box>
       <Hero />
       <Traits />
-      {/* Image List Container */}
-      <Container sx={{height: "100%", width: "100%"}}>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", paddingTop: 5, paddingBottom: 5}}>
-          <Typography>FOR ALL TYPES AND STYLES</Typography>
-        </Box>
-        <QuiltedImageList />
-      </Container>
-      {/* Image List Container */}
-
+      <QuiltedImageList />
       {/* Second Grid Container */}
       <div style={secondGrid}>
         <Typography variant="h3" sx={{paddingTop: 20}}>HOW IT WORKS</Typography>
