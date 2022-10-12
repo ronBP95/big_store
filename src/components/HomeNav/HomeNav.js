@@ -12,10 +12,10 @@ import '../../pages/index.css'
 
 export default function HomeNav() {
   return (
-    <Box sx={{ height: "6.9%", padding: {
+    <Box sx={{ height: "6.9%", minHeight: 64, padding: {
       xs: 0,
       sm: 0
-    } }}>
+    }}}>
       <AppBar position="static" sx={{backgroundColor: "#444444", minWidth: 375, minHeight: 64}}>
         <Toolbar sx= {{display: 'flex', justifyContent: 'space-between'}}>
             <Box 
