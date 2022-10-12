@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Image Imports
-import store from '../../images/store.webp'
+import steps from '../../images/steps.jpg'
 
 // Mui Imports
 import Typography from '@mui/material/Typography';
@@ -35,7 +35,7 @@ const secondGrid = {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    background: `url(${store})`,
+    background: `url(${steps})`,
     // background: "url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)",
     backgroundSize: "cover",
     height: "100%",

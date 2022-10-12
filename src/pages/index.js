@@ -11,9 +11,7 @@ import { HomeNav, Hero, Traits, QuiltedImageList, Steps, Footer } from '../compo
 const IndexPage = () => {
   return (
     <Box className="landing">
-      <Box className="nav">
-        <HomeNav sx={{ height: "7.4%", minHeight: 60 }} />
-      </Box>
+      <HomeNav />
       <Hero />
       <Traits />
       <QuiltedImageList />

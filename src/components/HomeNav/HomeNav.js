@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 
 export default function HomeNav() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, height: "7.4%", minHeight: 60  }}>
       <AppBar position="static" sx={{backgroundColor: "#444444"}}>
         <Toolbar sx= {{display: 'flex', justifyContent: 'space-between'}}>
             <Box sx= {{ flex: 1 }} />
