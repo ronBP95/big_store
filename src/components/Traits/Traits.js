@@ -46,7 +46,7 @@ const Traits = () => {
               <KeyIcon sx={{fontSize: "40pt", color: "black"}}/>
               <Typography variant="h6" sx={{marginTop: 4, fontFamily: "Inter Bold", color: "black", maxWidth: "191px"}}>EXCLUSIVE TO MEMBERS</Typography>
             </Box>
-            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "180px"}, fontFamily: "Open Sans"}}>In order to make sure our products are always in stock we limit our sales strictly to members. Create an acccount to start shopping with us today!</Box>
+            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "180px"}, fontFamily: "Open Sans"}}>In order to make sure our products are always in stock we limit our sales strictly to members.</Box>
           </Item>
         </Grid>
         <Grid item xs={9} md={3}>
@@ -55,7 +55,7 @@ const Traits = () => {
               <ShoppingBagIcon sx={{fontSize: "40pt", color: "black"}}/>
               <Typography variant="h6" sx={{marginTop: 4, fontFamily: "Inter Bold", color: "black", maxWidth: "191px"}}>PRODUCT VARIETY</Typography>
             </Box>
-            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "215px"}, fontFamily: "Open Sans"}}>From the latest trendy bags to the freshest looking accessories, we have a large selection of products available for purchase.</Box>
+            <Box sx={{textAlign: "center", marginTop: 4, width: "85%", height: "100%", maxHeight: {xs: "none", sm: "none", md: "215px"}, fontFamily: "Open Sans"}}>From bags to clothes to computer parts, we have a large selection of products available for purchase.</Box>
           </Item>
         </Grid>
       </Grid>
