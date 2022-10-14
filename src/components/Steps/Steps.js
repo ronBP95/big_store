@@ -24,10 +24,11 @@ const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
     textAlign: 'center',
+    width: "100%",
     background: "none",
-    marginTop: 50,
     fontSize: "16pt",
     // border: '1px solid black',
     color: theme.palette.text.secondary,
@@ -53,33 +54,34 @@ const number = {
 const Steps = () => {
     return (
         <div style={secondGrid}>
-        <Typography variant="h3" sx={{paddingTop: 20, fontFamily: "Inter Bold"}}>HOW IT WORKS</Typography>
-        <Grid rowSpacing={6} sx={{display: "flex", flexDirection: {xs: "column", sm: "column", md: "row "}, justifyContent: "center", alignItems: "center", width: "100%", height: {sm: "auto", md: "45rem"}, paddingTop: {xs: 10, sm: 10, md: 0}, paddingBottom: {xs: 10, sm: 10, md: 0}, background: `url(${steps})`, backgroundSize: "cover"}}>
-          <Grid item xs={4}>
+        <Typography variant="h3" sx={{paddingTop: 10, marginBottom: 3, fontFamily: "Inter", fontSize: "24pt"}}>HOW IT WORKS</Typography>
+        <Box sx={{borderBottom: "3px solid #ff3366", width: "15%", marginBottom: 6}}></Box>
+        <Grid container columnSpacing={1} rowSpacing={5} sx={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: {xs: "column", sm: "column", md: "row"}, width: "100%", height: "auto", paddingTop: {xs: 10, sm: 10, md: 0}, paddingBottom: {xs: 10, sm: 10, md: 0}, marginBottom: 10}}>
+          <Grid item xs={12} sm={12} md={4}>
             <Item>
               <Box>
                 <Typography style={number}>1.</Typography>
                 <LoginIcon sx={{marginTop: 4, fontSize: "64pt", color: "black"}} />
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Sign up with your name, email, and a secure password you have never used before.</Box>
+              <Box sx={{textAlign: {xs: "center", sm: "center", md: "left"}, marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Create an account with your name, email, and a secure password you have never used before to start shopping today.</Box>
             </Item>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={12} md={4}>
             <Item>
               <Box>
                 <Typography style={number}>2.</Typography>
                 <LibraryAddIcon sx={{marginTop: 4, fontSize: "64pt", color: "black"}} />
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Products are always in stock so feel free to add any products to your cart. Cart size is limited to 5 per purchase order.</Box>
+              <Box sx={{textAlign: {xs: "center", sm: "center", md: "left"}, marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Products are always in stock so feel free to add any products to your cart. Cart size is limited to 5 per purchase order.</Box>
             </Item>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={12} md={4}>
             <Item>
               <Box>
                 <Typography style={number}>3.</Typography>
                 <MailIcon sx={{marginTop: 4, fontSize: "64pt", color: "black"}}/>
               </Box>
-              <Box sx={{textAlign: "left", marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Checkout with speed and with ease. You will receive an email receipt at the email address you used to sign in with.</Box>
+              <Box sx={{textAlign: {xs: "center", sm: "center", md: "left"}, marginTop: 4, width: "85%", height: "100%", fontFamily: "Open Sans"}}>Checkout with speed and with ease. You will receive an email receipt at the email address you used to sign in with.</Box>
             </Item>
           </Grid>
         </Grid>
