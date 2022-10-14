@@ -49,6 +49,7 @@ const secondGrid = {
 const number = {
     color: "#ff3366",
     fontSize: "24pt",
+    fontFamily: "Inter"
 }
 
 const Steps = () => {

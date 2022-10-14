@@ -1,63 +1,35 @@
-import * as React from 'react';
+import React from 'react';
 
 // Mui Imports
-import { Typography, Grid, Container, Box } from '@mui/material';
+import Box from "@mui/material/Box"
+import Container from "@mui/material/Container"
+import { Typography } from '@mui/material';
 
-// Icon Imports
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
-const containerStyle = {
-    width: "100%",
-    height: "35%",
-    background: "#fff5f8"
-}
-
-const line = {
-    width: "2em",
-    fontSize: "16pt",
-    marginTop: "0.5em",
-    height: "2px",
-    background: "black",
-}
-
-const header = {
-    fontSize: "20pt"
-}
-
-const options = {
-    fontSize: "12pt"
-}
-
-const Footer = () => {
+const Footer2 = () => {
     return (
-        <div style={containerStyle}>
-            <Container sx={{width: "100%"}}>
-                <Grid container spacing={2} sx={{paddingTop: 5}}>
-                    <Grid item xs={4}>
-                        <Box sx={{display: "flex", paddingTop: 6, textAlign: "left"}}>
-                            <GitHubIcon sx={{marginRight: 5, fontSize: "44pt"}}/>
-                            <LinkedInIcon sx={{fontSize: "44pt"}}/>
-                        </Box>
-                        <Typography sx={{fontSize: "16pt", marginTop: 3}}>© Big Store 2022</Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Typography style={header}>Legal</Typography>
-                        <hr style={line}></hr>
-                        <Typography style={options}>Terms</Typography>
-                        <Typography>Privacy</Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Typography style={header}>PlaceHolder</Typography>
-                        <hr style={line}></hr>
-                        <Typography>Terms</Typography>
-                        <Typography>Privacy</Typography>
-                    </Grid>
-                </Grid>
-                <Typography sx={{marginTop: 3}}>Website made by Ron Magpantay. Source code is available on Github.</Typography>
+        <Box sx={{display: "flex", flexDirection: "column", width: "100%", height: "35%", background: "#fff5f8"}}>
+            <Container sx={{display: "flex", flexDirection: {xs: "column", sm: "column", md: "row"}, width: "100%", height: {xs: "auto", sm: "auto", md: "100%"}}}>
+                <Box sx={{width: "25%", height: {xs: "100%", sm: "100%", md: "100%"}, marginTop: 3, marginBottom: 3}}>
+                    <Typography>Socials</Typography>
+                    <Typography>Option 1</Typography>
+                    <Typography>Option 2</Typography>
+                    <Typography>Option 3</Typography>
+                </Box>
+                <Box sx={{width: "25%", height: {xs: "100%", sm: "100%", md: "100%"}, marginTop: 3, marginBottom: 3}}>
+                    <Typography>Legal</Typography>
+                    <Typography>Option 1</Typography>
+                    <Typography>Option 2</Typography>
+                    <Typography>Option 3</Typography>
+                </Box>
+                <Box sx={{width: "25%", height: {xs: "100%", sm: "100%", md: "100%"}, marginTop: 3, marginBottom: 3}}>
+                    <Typography>Language</Typography>
+                    <Typography>Option 1</Typography>
+                    <Typography>Option 2</Typography>
+                    <Typography>Option 3</Typography>
+                </Box>
             </Container>
-        </div>
+        </Box>
     );
 }
 
-export default Footer;
+export default Footer2;
