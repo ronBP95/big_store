@@ -6,6 +6,9 @@ import { ToastContainer } from 'react-toastify';
 // Component Imports
 import { ShopCard, Nav } from '../components'
 
+// Font Imports
+import "./index.css"
+
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
@@ -42,12 +45,17 @@ const Shop = () => {
     return (
         <div>
             <Nav />
-            <Container maxWidth="xl" sx={{ marginY: 5 }}>
-                <Grid container spacing={5}>
-                    {products.map((product, index) => <ShopCard product={product} key={index} listId={index} />)}
-                </Grid>
-                <ToastContainer />
-            </Container>
+            <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                {/* <Box>
+                    <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", width: "15vw", background: "#9A968F", color: "white", fontFamily: "Inter"}}>Filter</Box>
+                </Box> */}
+                <Box sx={{width: "80%", margin: 3}}>
+                    <Grid container spacing={5}>
+                        {products.map((product, index) => <ShopCard product={product} key={index} listId={index} />)}
+                    </Grid>
+                    <ToastContainer />
+                </Box>
+            </Box>
         </div>
     );
 }

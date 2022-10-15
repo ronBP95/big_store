@@ -23,7 +23,8 @@ import { toast } from 'react-toastify';
 const Products = <Button sx={{color: 'white'}} href='/shop'>products</Button>
 const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
 const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
-const pages = [About, Contact, Products, ];
+const pages = [Products];
+// const pages = [About, Contact, Products, ];
 
 const Nav = () => {
 
@@ -114,12 +115,12 @@ const Nav = () => {
   if (isAuth) {
     cartButton = <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
     profileButton = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
-    authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+    authButton = <Button sx={{marginLeft: 1, color: "#ff3366"}} onClick={handleLogout}>Log Out</Button>
     registerButton = null
   } else {
     cartButton = <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
     profileButton = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
-    authButton = <Button sx={{marginBottom: 2, marginLeft: 1}} onClick={handleLogout}>Log Out</Button>
+    authButton = <Button sx={{marginLeft: 1, color: "#ff3366"}} onClick={handleLogout}>Log Out</Button>
     registerButton = null
   }
 
@@ -132,7 +133,6 @@ const Nav = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -153,7 +153,7 @@ const Nav = () => {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'none', sm: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -162,7 +162,7 @@ const Nav = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Big Store
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
@@ -174,7 +174,7 @@ const Nav = () => {
               </Button>
             ))}
           </Box>
-          <Box>
+          <Box sx={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: {xs: "100%", sm: "inherit", md: "inherit"}}}>
             {cartButton}
             {profileButton}
             {authButton}

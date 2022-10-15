@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { Grid, Paper, Box, Button } from '@mui/material'
-import './ShopCard.css'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify';
 import { navigate } from 'gatsby';
+import Typography from "@mui/material"
+
+// Font Imports
+import '../../pages/index.css'
 
 const ShopCard = (props) => {
 
@@ -37,35 +40,44 @@ const ShopCard = (props) => {
         console.log(itemInfo)
     } 
 
+    const imageStyle = {
+        width: "150px",
+        height: "150px",
+        padding: "20px"
+    }
 
     return (
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-evenly",
                 alignItems: "center",
-                minHeight: 225,
+                height: "100%",
+                minHeight: 235,
                 minWidth: 200
             }}
             elevation={3} 
             square>
-                <img className="productImage" alt="" src={props.product.image}></img>
+                <img className="productImage" alt="" src={props.product.image} style={imageStyle}></img>
                 <Box sx={{
                     textAlign: "center",
                     width: "100%",
-                    height: 30,
-                    paddingRight: 1,
-                    paddingLeft: 1,
+                    height: 40,
+                    fontSize: "100%",
+                    paddingTop: 2,
+                    flex: 1,
+                    borderTop: "1px solid #EBEBFB",
+                    fontFamily: "Open Sans"
                 }}>
                     {props.product.title}
                 </Box>
-                <Box>
+                <Box sx={{display:"flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "100%", paddingLeft: 2, marginTop: 1, fontSize: "16pt"}}>
                     ${props.product.price}
+                    <Button onClick={handleCartAdd} sx={{marginRight: 1, color: "#ff3366"}}>
+                        Add to Cart
+                    </Button>
                 </Box>
-                <Button onClick={handleCartAdd}>
-                    Add to Cart
-                </Button>
             </Paper>
         </Grid>
     );
