@@ -128,7 +128,7 @@ const Nav = () => {
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -136,8 +136,7 @@ const Nav = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontFamily: 'Inter',
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -145,7 +144,7 @@ const Nav = () => {
           >
             BIG STORE
           </Typography>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -154,9 +153,7 @@ const Nav = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', sm: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontFamily: 'Inter',
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -174,7 +171,7 @@ const Nav = () => {
               </Button>
             ))}
           </Box>
-          <Box sx={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", width: {xs: "100%", sm: "inherit", md: "inherit"}}}>
+          <Box sx={{display: "flex", flexDirection: "row", justifyContent: {xs: "center", sm: "space-between", md: "center"}, alignItems: "center", width: {xs: "100%", sm: "inherit", md: "inherit"}}}>
             {cartButton}
             {profileButton}
             {authButton}
