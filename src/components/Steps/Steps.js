@@ -56,7 +56,7 @@ const Steps = () => {
     return (
         <div style={secondGrid}>
         <Typography variant="h3" sx={{paddingTop: 10, marginBottom: 3, fontFamily: "Inter", fontSize: "24pt"}}>HOW IT WORKS</Typography>
-        <Box sx={{borderBottom: "3px solid #ff3366", width: "15%", marginBottom: 6}}></Box>
+        <Box sx={{borderBottom: "3px solid #ff3366", width: "15%", maxWidth: "170px", marginBottom: 6}}></Box>
         <Grid container columnSpacing={1} rowSpacing={5} sx={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: {xs: "column", sm: "column", md: "row"}, width: "100%", height: "auto", paddingTop: {xs: 10, sm: 10, md: 0}, paddingBottom: {xs: 10, sm: 10, md: 0}, marginBottom: 10}}>
           <Grid item xs={12} sm={12} md={4}>
             <Item>
@@ -86,7 +86,7 @@ const Steps = () => {
             </Item>
           </Grid>
         </Grid>
-        <Button href='/register' sx={{marginBottom: 20, height: "50px", width: "150px", background: "#ff3366", color: "white"}}>Start Now</Button>
+        <Button href='/register' sx={{marginBottom: 20, height: "50px", width: "150px", background: "#ff3366", color: "white", transition: "0.3s", "&.MuiButtonBase-root:hover": {bgcolor: "red", transition: "0.3s"}}}>Start Now</Button>
       </div>
     );
 }

@@ -16,7 +16,7 @@ const IndexPage = () => {
       <Traits />
       <QuiltedImageList />
       <Steps />
-      {/* <Footer /> */}
+      <Footer />
       <ToastContainer />
     </Box>
   )
