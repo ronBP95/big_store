@@ -23,7 +23,7 @@ import { toast } from 'react-toastify';
 const Products = <Button sx={{color: 'white'}} href='/shop'>products</Button>
 const Contact = <Button sx={{color: 'white'}} href='/contact'>Contact</Button>
 const About = <Button sx={{color: 'white'}} href='/about'>about</Button>
-const pages = [Products];
+const pages = [];
 // const pages = [About, Contact, Products, ];
 
 const Nav = () => {
@@ -127,7 +127,7 @@ const Nav = () => {
   return (
     <AppBar position="static" sx={{backgroundColor: "#444444"}}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
@@ -135,7 +135,7 @@ const Nav = () => {
             component="a"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: 'flex',
               fontFamily: 'Inter',
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -144,24 +144,7 @@ const Nav = () => {
           >
             BIG STORE
           </Typography>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'none', sm: 'flex', md: 'none' },
-              fontFamily: 'Inter',
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Big Store
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'flex' } }}>
             {pages.map((page, index) => (
               <Button
                 key={index}
@@ -171,7 +154,7 @@ const Nav = () => {
               </Button>
             ))}
           </Box>
-          <Box sx={{display: "flex", flexDirection: "row", justifyContent: {xs: "center", sm: "space-between", md: "center"}, alignItems: "center", width: {xs: "100%", sm: "inherit", md: "inherit"}}}>
+          <Box sx={{display: "flex", flexDirection: "row", justifyContent: {xs: "center", sm: "center", md: "center"}, alignItems: "center", width: {xs: "inherit", sm: "inherit", md: "inherit"}}}>
             {cartButton}
             {profileButton}
             {authButton}
