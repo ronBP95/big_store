@@ -45,38 +45,48 @@ const Profile = () => {
     return (
         <div>
             <Nav />
-            <Container sx={{width: 750}}>
-                <Box sx={{width: "100%", height: 100, marginTop: 5, padding: 1}}>
+            <Container sx={{width: {xs: "inherit", sm: "inherit", md: "65%"}}}>
+                <Paper sx={{width: "100%", height: "auto", marginTop: 5, padding: 1}}>
+                    <Button href="/shop" sx={{margin: 0.25, padding: 0, color: "#ff3366"}}>Back to shopping</Button>
                     <Box>
-                        Profile
+                        <Typography variant="h4" sx={{fontFamily: "Inter", marginBottom: 1}}>Hi there, {name}!</Typography>
                     </Box>
-                    <Box>
-                        Name: {name}
+                    <Box sx={{display: "flex", gap: 0.5}}>
+                        <Typography variant="h6">Profile</Typography> 
                     </Box>
-                    <Box>
-                        Email: {email}
+                    <Box sx={{display: "flex", gap: 0.5}}>
+                        <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Name:</Typography>
+                        <Typography>{name}</Typography>
                     </Box>
-                </Box>
+                    <Box sx={{display: "flex", gap: 0.5}}>
+                        <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Email:</Typography>
+                        <Typography>{email}</Typography>
+                    </Box>
+                </Paper>
                 <Box sx={{width: "100%", height: 150, marginTop: 5, padding: 1}}>
-                    <Typography variant="h6">Order History</Typography>
+                    <Typography variant="h6" sx={{fontWeight: 700, marginTop: 1}}>Order History</Typography>
                     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", marginTop: 2}}>
                         {orderHistory.map((orders, index) => {
                             let initialValue = 0;
                             return (
                                 <Paper key={index} sx={{width: "100%", marginTop: 2}}>
-                                    <h2>Order #{index + 1}</h2>
+                                    <Typography sx={{fontFamily: "Open Sans", padding: 2, fontWeight: 700}}>Order #{index + 1}</Typography>
                                     {orders.map((items, index) => {
                                         initialValue += items.price
                                         return (
-                                            <Box>
-                                                <Box key={index} sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%"}}>
-                                                <h4>{items.title}</h4>
-                                                <p>{items.price}</p>
+                                            <Box sx={{padding: 2}}>
+                                                <Box key={index} sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", textAlign: "center", width: "100%", height: "auto", flexGrow: 1, border: "1px solid #cdd2ff", borderRadius: "5px"}}>
+                                                    <Box component="img" src={items.image} sx={{width: {sx: "50px", sm: "50px", md: "100px"}, height: {xs: "50px", sm: "50px", md: "100px"}, margin: 2}} />
+                                                    <Typography sx={{fontFamily: "Open Sans", fontWeight: 700, margin: 2, fontSize: {xs: "8pt", sm: "10pt", md: "12pt"}}}>{items.title}</Typography>
+                                                    <Typography sx={{fontFamily: "Open Sans", margin: 2}}>{Number.parseFloat(items.price).toFixed(2)}</Typography>
                                                 </Box>
                                             </Box>
                                         )
                                     })}
-                                    <Typography sx={{display: "flex", flexDirection: "row", justifyContent: "flex-end", width: "100%"}}>Total: {initialValue}</Typography>
+                                    <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%"}}>
+                                        <Box alt="gutter"></Box>
+                                        <Typography sx={{marginBottom: 2, marginRight: 2, fontWeight: 700}}>Total: {Number.parseFloat(initialValue).toFixed(2)}</Typography>
+                                    </Box>                                
                                 </Paper>
                             )
                         })}

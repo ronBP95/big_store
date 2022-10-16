@@ -10,7 +10,7 @@ import { navigate } from 'gatsby';
 
 const Checkout = () => {
 
-  const [cart, setCart]= React.useState([])
+  const [cart, setCart] = React.useState([])
   const [total, setTotal] = React.useState([])
 
   const getCart = () => {
@@ -57,36 +57,36 @@ const Checkout = () => {
   }
 
   return (
-    <div>
+    <Box>
       <CheckoutNav />
-      <Container sx={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
-        <Box sx={{display: "flex", flexDirection: "column", width: "55%", border: "1px solid #eeeeee", marginTop: 10}}>
+      <Container sx={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginBottom: 10, flexGrow: 1}}>
+        <Box sx={{display: "flex", flexDirection: "column", width: {xs: "100%", sm: "85%", md: "55%"}, border: "1px solid #eeeeee", marginTop: 10}}>
           <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
-            <Typography sx={{marginTop: 2, marginBottom: 1}}>Checkout</Typography>
+            <Typography sx={{marginTop: 2, marginBottom: 1, fontFamily: "Inter", fontWeight: 700}}>Checkout</Typography>
           </Box>
           <Box>
-            <Typography sx={{padding: 2}}>Order Summary</Typography>
+            <Typography sx={{padding: 2, fontFamily: "Inter", fontWeight: 700}}>Order Summary</Typography>
           </Box>
           <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 2, paddingRight: 3}}>
               <Box sx={{display:"flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
-                <Typography>Products</Typography>
-                <Typography>{cart}</Typography>
+                <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Products</Typography>
+                <Typography sx={{fontFamily: "Open Sans", fontSize: "11pt"}}>{cart}</Typography>
               </Box>
               <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
-                <Typography>Shipping</Typography>
-                <Typography>Free</Typography>
+                <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Shipping</Typography>
+                <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Free</Typography>
               </Box>
               <Box sx={{display:"flex", justifyContent: "space-between", width: "100%" }}>
-                <Typography>Total</Typography>
-                <Typography>{total}</Typography>
+                <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>Total</Typography>
+                <Typography sx={{fontFamily: "Inter", fontWeight: 700}}>{total}</Typography>
               </Box>
           </Box>
           <Box sx={{display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%"}}>
-            <Button sx={{margin: 2, marginBottom: 0}} onClick={checkout}>Place Order</Button>
+            <Button sx={{margin: 2, marginBottom: 0, color: "#ff3366"}} onClick={checkout}>Place Order</Button>
           </Box>
         </Box>
       </Container>
-    </div>
+    </Box>
   );
 }
 

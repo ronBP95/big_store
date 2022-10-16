@@ -42,7 +42,7 @@ await axios({
                 <img style={imageStyle} src={props.cartItem.image}></img>
                 <Typography sx={{display: "flex", justifyContent: "center", alignItems: 'center', fontSize: "8pt", width: "50%", marginLeft: 2}}>{props.cartItem.title}</Typography>
                 <Box>
-                    <Typography>${props.cartItem.price}</Typography>
+                    <Typography>${Number.parseFloat(props.cartItem.price).toFixed(2)}</Typography>
                     <Button onClick={handleRemove}>Remove</Button>
                 </Box>
             </Box>

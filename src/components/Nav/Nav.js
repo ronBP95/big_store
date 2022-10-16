@@ -64,10 +64,12 @@ const Nav = () => {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
+    overflowY: "scroll",
   };
 
   const checkoutBar = {
-    paddingBottom: '10px'
+    paddingBottom: 3,
+    paddingTop: 3,
   }
 
   const profile = () => {

@@ -73,7 +73,7 @@ const ShopCard = (props) => {
                     {props.product.title}
                 </Box>
                 <Box sx={{display:"flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "100%", paddingLeft: 2, marginTop: 1, fontSize: "16pt"}}>
-                    ${props.product.price}
+                    ${Number.parseFloat(props.product.price).toFixed(2)}
                     <Button onClick={handleCartAdd} sx={{marginRight: 1, color: "#ff3366"}}>
                         Add to Cart
                     </Button>
