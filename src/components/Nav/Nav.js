@@ -108,7 +108,6 @@ const Nav = () => {
   const handleLogout = () => {
     localStorage.setItem('token', null)
     navigate('/')
-    toast("Successfully logged out")
     checkAuth();
   }
 

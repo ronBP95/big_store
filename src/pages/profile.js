@@ -9,7 +9,7 @@ import Container from '@mui/material/Container'
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button'
 import { navigate } from 'gatsby';
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 const Profile = () => {
 
@@ -94,6 +94,7 @@ const Profile = () => {
                     </Box>
                 </Box>
             </Container>
+            <ToastContainer />
         </div>
     );
 }

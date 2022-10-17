@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Grid, Paper, Box, Button } from '@mui/material'
 import axios from 'axios'
-import { toast, ToastContainer } from 'react-toastify';
-import { navigate } from 'gatsby';
-import Typography from "@mui/material"
+import { toast } from 'react-toastify';
 
 // Font Imports
 import '../../pages/index.css'
@@ -31,11 +29,28 @@ const ShopCard = (props) => {
         })
         .then(function (res) {
             toast.success("Item Added to Cart", {
-                toastId: "cart"
+                toastId: "cart",
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
             })
         })
         .catch(function (res) {
-            toast.error("You need to login or your cart is full")
+            toast.error("You need to login or your cart is full", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "colored",
+            })
         })
         console.log(itemInfo)
     } 

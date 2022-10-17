@@ -48,11 +48,20 @@ const Checkout = () => {
     .then(function (response) {
       console.log(response)
       navigate('/profile')
-      toast("Checked Out Successfully")
+      toast.success("Order Placed Successfully. Thank you for shopping with us!", {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        })
     })
     .catch(function (res) {
       console.log(res)
-      toast("Something went wrong")
+      toast("Checkout Failed. Something went wrong..")
     })
   }
 

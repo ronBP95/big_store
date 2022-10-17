@@ -28,11 +28,27 @@ await axios({
 })
 .then(res => {
     console.log(res.data)
-    toast.success("Item Removed")
+    toast.success("Item Removed",{
+        position: "top-right",
+        autoClose: 2000,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: "false",
+        progress: undefined,
+        theme: "colored"
+    })
 })
 .catch(function (res) {
     console.log(res.data)
-    toast.error("Invalid Request")
+    toast.error("Invalid Request", {
+        position: "top-right",
+        autoClose: 2000,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: "false",
+        progress: undefined,
+        theme: "colored"
+    })
 })
 };
 

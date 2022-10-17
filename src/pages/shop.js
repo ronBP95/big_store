@@ -53,9 +53,9 @@ const Shop = () => {
                     <Grid container spacing={5}>
                         {products.map((product, index) => <ShopCard product={product} key={index} listId={index} />)}
                     </Grid>
-                    <ToastContainer />
                 </Box>
             </Box>
+            <ToastContainer />
         </div>
     );
 }

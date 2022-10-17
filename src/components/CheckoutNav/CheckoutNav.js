@@ -14,8 +14,8 @@ const CheckoutNav = () => {
                 }}
             >
                 <Toolbar>
-                <Typography variant="h6" color="inherit" noWrap>
-                    Big storefront
+                <Typography variant="h6" color="inherit" sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    Big Store
                 </Typography>
                 </Toolbar>
             </AppBar>
