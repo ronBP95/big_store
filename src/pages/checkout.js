@@ -8,6 +8,8 @@ import OrderSummary from '../components/OrderSummary/OrderSummary';
 import { toast } from 'react-toastify';
 import { navigate } from 'gatsby';
 
+// SendGrid Imports
+
 const Checkout = () => {
 
   const [cart, setCart] = React.useState([])
