@@ -116,8 +116,8 @@ const Nav = () => {
   let registerButton
   let profileButton
   if (isAuth) {
-    cartButton = <ShoppingCartIcon onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
-    profileButton = <AccountCircleIcon onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
+    cartButton = <ShoppingCartIcon alt="cart" onClick={handleOpen} sx={{marginLeft: 2, cursor: 'pointer'}}/>
+    profileButton = <AccountCircleIcon alt="profile" onClick={profile} sx={{cursor: 'pointer', marginLeft: 2}} />
     authButton = <Button sx={{marginLeft: 1, color: "#ff3366"}} onClick={handleLogout}>Log Out</Button>
     registerButton = null
   } else {
