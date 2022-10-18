@@ -50,7 +50,7 @@ const Checkout = () => {
     .then(function (response) {
       console.log(response)
       navigate('/profile')
-      toast.success("Order Placed Successfully. Thank you for shopping with us!", {
+      toast.success("Order Placed Successfully. Please check your email for a receipt!", {
         position: "top-right",
         autoClose: 4000,
         hideProgressBar: false,
