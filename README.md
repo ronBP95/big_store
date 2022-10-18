@@ -1,6 +1,7 @@
 # Welcome to the Big Store!
 
 Live View: <a>https://bigstore.gatsbyjs.io/</a>
+Backend: Currently being hosted on <a href="http://www.glitch.com">Glitch</a>. Viewable link to come..
 
 ### Features
 
@@ -27,6 +28,10 @@ A modal was built out using React with Material-UI and maps out the cart propert
 
 Checkout takes the price of all of the items and empties out the cart.
 
-### Email / Analyitics / Refinement (Planned Features)
+### SendGrid Integration
 
-The SendGrid API will be used to send email receipts of the order that was made and will use the email address of the users sign in credentials. Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present. The "Minimum Viable Project" has been completed and a refinement project is currently underway. I am working on fonts, responsiveness pages, fixing react-toastify triggers, and many other visual improvements.
+SendGrid has been integrated successfully but only sends out a test email with a basic subject line, text and html. Currently working on creating a better email template but the integration is working fine and emails are being sent to spam folders because the verified email domain is coming from a free email host (@gmail.com).
+
+### Planned Features
+
+Google Analytics has been implemented on my portfolio website and will be implemented here to see if user activity is present. Project visuals have been improved greatly but are still underway.
