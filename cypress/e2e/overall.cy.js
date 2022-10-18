@@ -13,11 +13,12 @@ describe('Overall flow', () => {
   })
   it('Clicked Login Button', () => {
     cy.get('button[type="submit"]').click()
+    cy.saveLocalStorage()
   })
   it('Page Data loaded Correctly (First Item Loaded)', () => {
     cy.get('div').contains("Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops")
   })
   it('Added an Item to Cart', () => {
-    cy.get('button').contains('Add to Cart').first()
+    cy.get('button').contains('Add to Cart').first().click()
   })
 })
