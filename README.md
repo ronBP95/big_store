@@ -1,7 +1,8 @@
 # Welcome to the Big Store!
 
-Live View: <a>https://bigstore.gatsbyjs.io/</a><br />
-Backend View: Currently being hosted on <a href="https://glitch.com/edit/#!/big-store-backend">Glitch</a>.
+<strong>Live View:</strong> <a>https://bigstore.gatsbyjs.io/</a><br />
+<strong>Backend View:</strong> Hosted on <a href="https://glitch.com/edit/#!/big-store-backend">Glitch.com</a>. <br />
+<strong>Api Documentation:</strong> <a href="https://documenter.getpostman.com/view/14742519/2s847HPt3Z">Viewable on Postman</a>
 
 # For Demonstration Purposes Only\*\*
 
